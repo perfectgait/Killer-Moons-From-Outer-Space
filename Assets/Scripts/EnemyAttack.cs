@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    // TODO Group with headings
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float speed = 8f;
     [SerializeField] int bulletCountPerLoop = 3;
+    [SerializeField] int bulletsPerCluster = 10;
+    [SerializeField] int startAngle = 90;
+    [SerializeField] int endAngle = 270;
     [SerializeField] float waitTimeBetweenBullets = .25f;
     [SerializeField] bool loopBulletCount = true;
     [SerializeField] float waitTimeBetweenLoop = 2f;
@@ -18,7 +22,6 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         StartCoroutine(FireBullets());
     }
 
@@ -35,9 +38,20 @@ public class EnemyAttack : MonoBehaviour
         {
             for (var i = 1; i <= bulletCountPerLoop; i++)
             {
-                // TODO: Eventually use an object pool for the projectiles instead of Instantiating each one
-                var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-                projectile.GetComponent<Projectile>().SetVelocity(speed, Vector2.left);
+                float angleStep = (endAngle - startAngle) / bulletsPerCluster;
+                float angle = startAngle;
+                for (var j = 0; j <= bulletsPerCluster; j++)
+                {
+                    float dirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
+                    float dirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+
+                    Vector3 moveVector = new Vector2(dirX, dirY);
+                    Vector2 bulVector = (moveVector - transform.position).normalized;
+
+                    var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+                    projectile.GetComponent<Projectile>().SetVelocity(speed, bulVector);
+                    angle += angleStep;
+                }
                 yield return new WaitForSeconds(waitTimeBetweenBullets);
             }
             yield return new WaitForSeconds(waitTimeBetweenLoop);
