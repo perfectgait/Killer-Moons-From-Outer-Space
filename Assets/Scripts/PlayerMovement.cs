@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float horizontalMovementSpeed = 7.0f;
     [SerializeField] float verticalMovementSpeed = 7.0f;
-    [SerializeField] float xPadding = 0.5f;
-    [SerializeField] float yPadding = 0.5f;
+    [SerializeField] float xRightPadding = 0.5f;
+    [SerializeField] float xLeftPadding = 0.5f;
+    [SerializeField] float yTopPadding = 0.5f;
+    [SerializeField] float yBottomPadding = 0.5f;
 
     float xMin;
     float xMax;
@@ -30,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Camera gameCamera = Camera.main;
 
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + xPadding;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - xPadding;
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yPadding;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yPadding;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + xLeftPadding;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - xRightPadding;
+        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yBottomPadding;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yTopPadding;
     }
 
     private void Move()
