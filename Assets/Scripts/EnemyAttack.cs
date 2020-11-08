@@ -16,8 +16,6 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] bool loopBulletCount = true;
     [SerializeField] float waitTimeBetweenLoop = 2f;
 
-    // TODO: Should pulse/loop
-    // TODO: Wait time between pulse/loop
 
     // Start is called before the first frame update
     void Start()
