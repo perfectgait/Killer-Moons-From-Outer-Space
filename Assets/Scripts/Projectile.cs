@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Vector2 direction;
-    private float speed;
-
-
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] Vector2 direction;
+    [SerializeField] float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,6 +25,4 @@ public class Projectile : MonoBehaviour
         this.speed = speed;
         this.direction = direction;
     }
-
-    // TODO: Destroy the gameObject when it collides or goes outside the bounds
 }

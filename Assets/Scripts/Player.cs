@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] float horizontalMovementSpeed = 7.0f;
     [SerializeField] float verticalMovementSpeed = 7.0f;
@@ -10,22 +10,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float xLeftPadding = 0.5f;
     [SerializeField] float yTopPadding = 0.5f;
     [SerializeField] float yBottomPadding = 0.5f;
+    [SerializeField] float projectileFiringPeriod = 1.0f;
 
-    float xMin;
-    float xMax;
-    float yMin;
-    float yMax;
+    private Coroutine firingCoroutine;
+    private float xMin;
+    private float xMax;
+    private float yMin;
+    private float yMax;
+    private Shooter shooter;
 
     // Start is called before the first frame update
     void Start()
     {
         SetupMovementBoundaries();
+        shooter = GetComponent<Shooter>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Fire();
     }
 
     private void SetupMovementBoundaries()
@@ -46,5 +51,33 @@ public class PlayerMovement : MonoBehaviour
         float newYPosition = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
 
         transform.position = new Vector3(newXPosition, newYPosition, transform.position.z);
+    }
+
+    private void Fire()
+    {
+        if (!shooter)
+        {
+            return;
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            firingCoroutine = StartCoroutine(FireContinuously());
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firingCoroutine);
+        }
+    }
+
+    private IEnumerator FireContinuously()
+    {
+        while (true)
+        {
+            shooter.Fire();
+
+            yield return new WaitForSeconds(projectileFiringPeriod);
+        }
     }
 }
