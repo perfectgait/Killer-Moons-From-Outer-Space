@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private EnemyAttack shooter;
+    private BulletEmitter bulletEmitter;
 
     // Start is called before the first frame update
     void Start()
     {
-        shooter = GetComponent<EnemyAttack>();
+        bulletEmitter = GetComponent<BulletEmitter>();
 
-        if (shooter)
+        if (bulletEmitter)
         {
-            StartCoroutine(shooter.Fire());
+            StartCoroutine(bulletEmitter.Emit());
         }
     }
 

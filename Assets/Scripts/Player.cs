@@ -17,13 +17,13 @@ public class Player : MonoBehaviour
     private float xMax;
     private float yMin;
     private float yMax;
-    private Shooter shooter;
+    private BulletEmitter bulletEmitter;
 
     // Start is called before the first frame update
     void Start()
     {
         SetupMovementBoundaries();
-        shooter = GetComponent<Shooter>();
+        bulletEmitter = GetComponent<BulletEmitter>();
     }
 
     // Update is called once per frame
@@ -55,29 +55,19 @@ public class Player : MonoBehaviour
 
     private void Fire()
     {
-        if (!shooter)
+        if (!bulletEmitter)
         {
             return;
         }
 
         if (Input.GetButtonDown("Fire1"))
         {
-            firingCoroutine = StartCoroutine(FireContinuously());
+            firingCoroutine = StartCoroutine(bulletEmitter.Emit());
         }
 
         if (Input.GetButtonUp("Fire1"))
         {
             StopCoroutine(firingCoroutine);
-        }
-    }
-
-    private IEnumerator FireContinuously()
-    {
-        while (true)
-        {
-            shooter.Fire();
-
-            yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
 }

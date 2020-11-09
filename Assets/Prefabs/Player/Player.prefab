@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2716866169356230322}
   - component: {fileID: 3180151806885260396}
   - component: {fileID: 7855032400714161084}
-  - component: {fileID: 308143578}
+  - component: {fileID: 1976622210}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -182,7 +182,7 @@ MonoBehaviour:
   yTopPadding: 0.35
   yBottomPadding: 0.4
   projectileFiringPeriod: 0.5
---- !u!114 &308143578
+--- !u!114 &1976622210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,9 +191,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2716866169356230323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a61b35b0567c4efa911c87fe99f2c37, type: 3}
+  m_Script: {fileID: 11500000, guid: ce322259284cfd54daa65f2569fe880c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6890917514262629253, guid: a0d57f517119b489e808782daed70a71,
+  projectilePrefab: {fileID: 6890917514262629253, guid: a0d57f517119b489e808782daed70a71,
     type: 3}
-  weapon: {fileID: 1005692508}
+  speed: 15
+  bulletCountPerLoop: 1
+  bulletsPerCluster: 1
+  startAngle: 90
+  endAngle: 90
+  waitTimeBetweenBullets: 0.5
+  loopBulletCount: 1
+  waitTimeBetweenLoop: 0
