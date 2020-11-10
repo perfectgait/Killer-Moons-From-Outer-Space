@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 3180151806885260396}
   - component: {fileID: 7855032400714161084}
   - component: {fileID: 1976622210}
+  - component: {fileID: 2716866169090128193}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6890917514262629253, guid: a0d57f517119b489e808782daed70a71,
     type: 3}
+  bulletOriginPoint: {fileID: 1005692508}
   speed: 15
   bulletCountPerLoop: 1
   bulletsPerCluster: 1
@@ -204,3 +206,16 @@ MonoBehaviour:
   waitTimeBetweenBullets: 0.5
   loopBulletCount: 1
   waitTimeBetweenLoop: 0
+--- !u!114 &2716866169090128193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716866169356230323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
