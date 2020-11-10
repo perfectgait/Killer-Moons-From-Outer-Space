@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2017281291373717590}
   - component: {fileID: 2017281291373717591}
   - component: {fileID: 7762248389156996542}
+  - component: {fileID: 1937549528}
+  - component: {fileID: 2043848978615792217}
   m_Layer: 0
   m_Name: Arc Shooting Enemy
   m_TagString: Untagged
@@ -113,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5253408098806588500, guid: e3be3c62b3b6fbf48b1a0a9ed45b4971,
     type: 3}
+  bulletOriginPoint: {fileID: 0}
   speed: 8
   bulletCountPerLoop: 3
   bulletsPerCluster: 10
@@ -121,3 +124,28 @@ MonoBehaviour:
   waitTimeBetweenBullets: 0.17
   loopBulletCount: 1
   waitTimeBetweenLoop: 2
+--- !u!114 &1937549528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017281291373717544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ee3cf53d5dd4b52a340c2b861dee3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2043848978615792217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017281291373717544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
