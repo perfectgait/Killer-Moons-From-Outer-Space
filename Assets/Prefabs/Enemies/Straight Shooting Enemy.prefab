@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8298119344198018487}
   - component: {fileID: 1143508815}
   - component: {fileID: 1191626968853403791}
-  m_Layer: 0
+  - component: {fileID: 2630403541769558101}
+  m_Layer: 8
   m_Name: Straight Shooting Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,3 +150,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!70 &2630403541769558101
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247432967690536993}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0076793456, y: 0.010237902}
+  m_Size: {x: 1.0803496, y: 0.501877}
+  m_Direction: 1
