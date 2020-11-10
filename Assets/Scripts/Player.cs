@@ -18,12 +18,14 @@ public class Player : MonoBehaviour
     private float yMin;
     private float yMax;
     private BulletEmitter bulletEmitter;
+    private Health health;
 
     // Start is called before the first frame update
     void Start()
     {
         SetupMovementBoundaries();
         bulletEmitter = GetComponent<BulletEmitter>();
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -69,5 +71,15 @@ public class Player : MonoBehaviour
         {
             StopCoroutine(firingCoroutine);
         }
+    }
+
+    public float GetHealth()
+    {
+        if (!health)
+        {
+            return 0.0f;
+        }
+
+        return health.GetHealth();
     }
 }
