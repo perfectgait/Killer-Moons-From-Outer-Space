@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 582664758982160749}
   - component: {fileID: 6182394580671815143}
   m_Layer: 8
-  m_Name: Carl
+  m_Name: Dirty Barry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,14 +119,14 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5253408098806588500, guid: e3be3c62b3b6fbf48b1a0a9ed45b4971,
     type: 3}
   bulletOriginPoint: {fileID: 0}
-  speed: 8
-  bulletCountPerLoop: 3
-  bulletsPerCluster: 1
+  bulletSpeed: 8
+  bulletCountPerWave: 1
+  wavesPerPulse: 3
   startAngle: 270
   endAngle: 270
   waitTimeBetweenBullets: 0.17
-  loopBulletCount: 1
-  waitTimeBetweenLoop: 2
+  waitTimeBetweenPulse: 2
+  continousEmission: 1
 --- !u!114 &1143508815
 MonoBehaviour:
   m_ObjectHideFlags: 0
