@@ -33,6 +33,8 @@ public class BulletEmitter : MonoBehaviour
     [Tooltip("Continue shooting for the lifetime of the game object?")]
     [SerializeField] bool continousEmission = true;
 
+    private Transform bulletOriginTransform;
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,14 +48,19 @@ public class BulletEmitter : MonoBehaviour
 
     }
 
-    public IEnumerator Emit()
+    private void SetBulletOriginTransform()
     {
-        var bulletOriginTransform = transform;
+        bulletOriginTransform = transform;
 
         if (bulletOriginPoint)
         {
             bulletOriginTransform = bulletOriginPoint.transform;
         }
+    }
+
+    public IEnumerator Emit()
+    {
+        SetBulletOriginTransform();
 
         do
         {
@@ -77,5 +84,29 @@ public class BulletEmitter : MonoBehaviour
             }
             yield return new WaitForSeconds(waitTimeBetweenPulse);
         } while (continousEmission);
+    }
+
+    private void OnDrawGizmos()
+    {
+        SetBulletOriginTransform();
+
+        // Show the direction and angle of the bullet wave
+        float circleRadius = 1.25f;
+
+        Gizmos.DrawWireSphere(bulletOriginTransform.position, circleRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(bulletOriginTransform.position, GetPositionOnCircle(startAngle, circleRadius));
+        Gizmos.DrawLine(bulletOriginTransform.position, GetPositionOnCircle(endAngle, circleRadius));
+    }
+
+    private Vector2 GetPositionOnCircle(int angle, float radius)
+    {
+        var centerPosition = new Vector2(bulletOriginTransform.position.x, bulletOriginTransform.position.y);
+
+        // Calculate the angle of the corner in radians.
+        float radians = (-angle + 90) * Mathf.PI / 180f;
+
+        // Get the X and Y coordinates of the corner point.
+       return new Vector2(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius) + centerPosition;
     }
 }
