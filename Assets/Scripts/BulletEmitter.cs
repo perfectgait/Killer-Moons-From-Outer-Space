@@ -43,17 +43,17 @@ public class BulletEmitter : MonoBehaviour
         {
             for (var i = 1; i <= bulletCountPerLoop; i++)
             {
-                float angleStep = (endAngle - startAngle) / bulletsPerCluster;
+                float angleStep = (endAngle - startAngle) / bulletsPerCluster - 1;
                 float angle = startAngle;
-                for (var j = 0; j <= bulletsPerCluster; j++)
+                for (var j = 1; j <= bulletsPerCluster; j++)
                 {
                     float dirX = bulletOriginTransform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
                     float dirY = bulletOriginTransform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
 
-                    Vector3 moveVector = new Vector2(dirX, dirY);
-                    Vector2 bulVector = (moveVector - bulletOriginTransform.position).normalized;
+                    Vector3 moveVector = new Vector3(dirX, dirY, 0f);
+                    Vector3 bulVector = (moveVector - bulletOriginTransform.position).normalized;
 
-                    var projectile = Instantiate(projectilePrefab, bulletOriginTransform.position, bulletOriginTransform.rotation);
+                    var projectile = Instantiate(projectilePrefab, bulletOriginTransform.position, Quaternion.identity);
                     projectile.GetComponent<Projectile>().SetVelocity(speed, bulVector);
                     angle += angleStep;
                 }

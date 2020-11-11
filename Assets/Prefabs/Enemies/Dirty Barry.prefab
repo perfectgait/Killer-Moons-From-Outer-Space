@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 582664758982160749}
   - component: {fileID: 6182394580671815143}
   m_Layer: 8
-  m_Name: Straight Shooting Enemy
+  m_Name: Carl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,10 +75,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1993898921
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 079d652813d396846b60f22fdd079a92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da4f97a1b89776e428a26764ee5ea97e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -165,8 +165,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0076793456, y: 0.010237902}
-  m_Size: {x: 1.0803496, y: 0.501877}
+  m_Offset: {x: 0.07184733, y: 0.010237895}
+  m_Size: {x: 1.2086855, y: 0.50187826}
   m_Direction: 1
 --- !u!114 &582664758982160749
 MonoBehaviour:
