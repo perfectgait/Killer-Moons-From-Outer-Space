@@ -199,14 +199,14 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6890917514262629253, guid: a0d57f517119b489e808782daed70a71,
     type: 3}
   bulletOriginPoint: {fileID: 1005692508}
-  speed: 15
-  bulletCountPerLoop: 1
-  bulletsPerCluster: 1
+  bulletSpeed: 8
+  bulletCountPerWave: 1
+  wavesPerPulse: 1
   startAngle: 90
   endAngle: 90
   waitTimeBetweenBullets: 0.5
-  loopBulletCount: 1
-  waitTimeBetweenLoop: 0
+  waitTimeBetweenPulse: 0
+  continousEmission: 1
 --- !u!114 &2716866169090128193
 MonoBehaviour:
   m_ObjectHideFlags: 0

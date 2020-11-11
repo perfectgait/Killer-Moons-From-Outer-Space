@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 247432967690537052}
   - component: {fileID: 247432967690537055}
   - component: {fileID: 247432967690537054}
-  - component: {fileID: 8298119344198018487}
   - component: {fileID: 1143508815}
   - component: {fileID: 1191626968853403791}
   - component: {fileID: 2630403541769558101}
@@ -104,29 +103,6 @@ MonoBehaviour:
   horizontalSpeed: 4.94
   period: 5.28
   amplitude: 1.09
---- !u!114 &8298119344198018487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247432967690536993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce322259284cfd54daa65f2569fe880c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5253408098806588500, guid: e3be3c62b3b6fbf48b1a0a9ed45b4971,
-    type: 3}
-  bulletOriginPoint: {fileID: 0}
-  bulletSpeed: 8
-  bulletCountPerWave: 1
-  wavesPerPulse: 1
-  startAngle: 270
-  endAngle: 270
-  waitTimeBetweenBullets: 0.55
-  waitTimeBetweenPulse: 0
-  continousEmission: 1
 --- !u!114 &1143508815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
 --- !u!70 &2630403541769558101
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

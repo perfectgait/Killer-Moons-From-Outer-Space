@@ -14,11 +14,13 @@ public class SineMovement : MonoBehaviour
     [SerializeField] float amplitude = .5f;
 
     private float startYPos;
+    private float initTime;
 
     // Start is called before the first frame update
     void Start()
     {
         startYPos = transform.position.y;
+        initTime = Time.timeSinceLevelLoad;
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class SineMovement : MonoBehaviour
     {
         var movement = new Vector3(
             transform.position.x - horizontalSpeed * Time.deltaTime,
-            startYPos + Mathf.Sin(period * Time.time) * amplitude
+            startYPos + Mathf.Sin(period * (Time.time - initTime)) * amplitude
         );
         transform.position = movement;
     }

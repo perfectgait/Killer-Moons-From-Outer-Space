@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // TODO: Don't start shooting until you're visible
         bulletEmitter = GetComponent<BulletEmitter>();
 
         if (bulletEmitter)

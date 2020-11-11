@@ -121,7 +121,7 @@ MonoBehaviour:
   bulletOriginPoint: {fileID: 0}
   bulletSpeed: 8
   bulletCountPerWave: 1
-  wavesPerPulse: 3
+  wavesPerPulse: 1
   startAngle: 270
   endAngle: 270
   waitTimeBetweenBullets: 0.17
