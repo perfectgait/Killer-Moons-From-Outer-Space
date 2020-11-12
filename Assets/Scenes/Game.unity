@@ -1237,10 +1237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1833106023, guid: 791ce651caa9a4bd08fd42affb8ab6cd, type: 3}
-      propertyPath: iframeDuration
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2716866169356230322, guid: 791ce651caa9a4bd08fd42affb8ab6cd,
         type: 3}
       propertyPath: m_RootOrder
