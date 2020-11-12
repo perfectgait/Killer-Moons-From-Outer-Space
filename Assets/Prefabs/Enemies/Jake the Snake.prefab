@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  iframes: 20
+  touchDamageFrame: 20
 --- !u!50 &4596497461170486685
 Rigidbody2D:
   serializedVersion: 4

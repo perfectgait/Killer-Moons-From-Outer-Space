@@ -5,9 +5,10 @@ using UnityEngine;
 public class TouchDamageDealer : MonoBehaviour
 {
     [SerializeField] float damage;
-    [SerializeField] int iframes;
+    [Tooltip("The frame that the touch damage is applied")]
+    [SerializeField] int touchDamageFrame;
 
-    private int iframesUsed = 0;
+    private int currentDamageFrame = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,18 +26,18 @@ public class TouchDamageDealer : MonoBehaviour
 
         if (health)
         {
-            iframesUsed++;
+            currentDamageFrame++;
 
-            if (iframesUsed >= iframes)
+            if (currentDamageFrame >= touchDamageFrame)
             {
                 health.Damage(damage);
-                iframesUsed = 0;
+                currentDamageFrame = 0;
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        iframesUsed = 0;
+        currentDamageFrame = 0;
     }
 }
