@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minigun : MonoBehaviour, IPowerup
+public class Minigun : Powerup
 {
-    public void Apply(MonoBehaviour behaviour)
+    public override void Apply(MonoBehaviour behaviour)
     {
         if (behaviour is Player)
         {
