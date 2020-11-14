@@ -20,6 +20,6 @@ public class Minigun : MonoBehaviour
 
     public void Apply(BulletEmitter emitter)
     {
-        emitter.SetWaitTimeBetweenBullets(0.01f);
+        //emitter.SetWaitTimeBetweenBullets(0.01f);
     }
 }

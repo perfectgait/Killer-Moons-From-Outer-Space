@@ -17,8 +17,11 @@ public class Player : MonoBehaviour
     private float xMax;
     private float yMin;
     private float yMax;
+
+
     private BulletEmitter bulletEmitter;
     private Health health;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
         SetupMovementBoundaries();
         bulletEmitter = GetComponent<BulletEmitter>();
         health = GetComponent<Health>();
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -64,6 +68,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            audioManager.PlaySoundEffect("Player Laser");
             firingCoroutine = StartCoroutine(bulletEmitter.Emit());
         }
 
