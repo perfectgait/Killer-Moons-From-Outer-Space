@@ -26,7 +26,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     void Start()
     {
         InitializeSounds("SFX", soundEffects);
@@ -85,10 +84,12 @@ public class Sound
     [SerializeField] AudioClip audioClip;
     [Range(0f, 1f)]
     [SerializeField] float volume = 1f;
+    [Range(-0.5f, 1.4f)]
+    [SerializeField] float pitch = 1f;
+    [SerializeField] bool loop = false;
 
     private AudioSource audioSource;
 
-    // TODO: Add volume/pitch options with Range() serialize field
     public string GetName()
     {
         return name;
@@ -99,6 +100,8 @@ public class Sound
         audioSource = _audioSource;
         audioSource.clip = audioClip;
         audioSource.volume = volume;
+        audioSource.pitch = pitch;
+        audioSource.loop = loop;
     }
 
     public void Play()

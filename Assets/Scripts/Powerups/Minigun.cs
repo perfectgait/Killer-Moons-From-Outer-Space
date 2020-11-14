@@ -13,6 +13,7 @@ public class Minigun : Powerup
             if (emitter)
             {
                 emitter.SetWaitTimeBetweenBullets(0.1f);
+                emitter.SetBulletSfx("Fast Laser");
             }
         }
     }

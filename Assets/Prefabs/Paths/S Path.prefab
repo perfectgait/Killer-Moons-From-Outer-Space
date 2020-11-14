@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3237919335218672821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.54, y: -0.02, z: 0}
+  m_LocalPosition: {x: -1.42, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,9 +47,9 @@ MonoBehaviour:
     _bezierPath:
       points:
       - {x: 8.739932, y: 6.952972, z: 0}
-      - {x: -9.328676, y: 3.5319123, z: 0}
-      - {x: 12.16403, y: -1.8108113, z: 0}
-      - {x: -8.87871, y: -6.360151, z: 0}
+      - {x: -5.3719954, y: 3.544417, z: 0}
+      - {x: 17.569824, y: -2.6943126, z: 0}
+      - {x: -5.7030463, y: -8.008929, z: 0}
       isClosed: 0
       space: 1
       controlMode: 1
@@ -76,11 +76,11 @@ MonoBehaviour:
     keepConstantHandleSize: 0
     showNormalsInVertexMode: 0
     showBezierPathInVertexMode: 0
-    showDisplayOptions: 0
+    showDisplayOptions: 1
     showPathOptions: 1
-    showVertexPathDisplayOptions: 0
+    showVertexPathDisplayOptions: 1
     showVertexPathOptions: 1
     showNormals: 1
     showNormalsHelpInfo: 0
-    tabIndex: 0
+    tabIndex: 1
   initialized: 1

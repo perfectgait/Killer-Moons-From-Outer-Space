@@ -10,6 +10,8 @@ public class BulletEmitter : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [Tooltip("If no origin point is provided, default origin point is this script's game object")]
     [SerializeField] GameObject bulletOriginPoint;
+    [Tooltip("Use a sound name from the AudioManager")]
+    [SerializeField] string soundEffectName = "Default Laser";
 
     [Header("Bullet")]
     [SerializeField] float bulletSpeed = 8f;
@@ -34,12 +36,13 @@ public class BulletEmitter : MonoBehaviour
     [SerializeField] bool continousEmission = true;
 
     private Transform bulletOriginTransform;
+    private AudioManager audioManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -66,6 +69,8 @@ public class BulletEmitter : MonoBehaviour
         {
             for (var i = 1; i <= wavesPerPulse; i++)
             {
+                audioManager.PlaySoundEffect(soundEffectName);
+
                 float angleStep = (endAngle - startAngle) / bulletCountPerWave - 1;
                 float angle = startAngle;
                 for (var j = 1; j <= bulletCountPerWave; j++)
@@ -86,6 +91,7 @@ public class BulletEmitter : MonoBehaviour
         } while (continousEmission);
     }
 
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         SetBulletOriginTransform();
@@ -109,9 +115,15 @@ public class BulletEmitter : MonoBehaviour
         // Get the X and Y coordinates of the corner point.
         return new Vector2(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius) + centerPosition;
     }
+    #endif
 
     public void SetWaitTimeBetweenBullets(float waitTime)
     {
         waitTimeBetweenBullets = waitTime;
+    }
+
+    public void SetBulletSfx(string soundName)
+    {
+        soundEffectName = soundName;
     }
 }

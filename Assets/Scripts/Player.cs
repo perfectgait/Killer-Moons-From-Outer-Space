@@ -70,7 +70,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            audioManager.PlaySoundEffect("Player Laser");
             firingCoroutine = StartCoroutine(bulletEmitter.Emit());
         }
 
