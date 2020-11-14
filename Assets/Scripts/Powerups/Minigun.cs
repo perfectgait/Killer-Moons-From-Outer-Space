@@ -2,24 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// @TODO Create powerup interface
-
-public class Minigun : MonoBehaviour
+public class Minigun : MonoBehaviour, IPowerup
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Apply(MonoBehaviour behaviour)
     {
-        
-    }
+        if (behaviour is Player)
+        {
+            BulletEmitter emitter = behaviour.GetComponent<BulletEmitter>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Apply(BulletEmitter emitter)
-    {
-        //emitter.SetWaitTimeBetweenBullets(0.01f);
+            if (emitter)
+            {
+                emitter.SetWaitTimeBetweenBullets(0.1f);
+            }
+        }
     }
 }

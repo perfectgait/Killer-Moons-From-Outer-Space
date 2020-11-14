@@ -34,14 +34,12 @@ public class BulletEmitter : MonoBehaviour
     [SerializeField] bool continousEmission = true;
 
     private Transform bulletOriginTransform;
-    // @TODO Make this an array of powerups
-    private Minigun minigun;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        minigun = GetComponent<Minigun>();
+
     }
 
     // Update is called once per frame
@@ -62,12 +60,6 @@ public class BulletEmitter : MonoBehaviour
 
     public IEnumerator Emit()
     {
-        // @TODO Iterate over an array of powerups and apply them
-        if (minigun)
-        {
-            minigun.Apply(this);
-        }
-
         SetBulletOriginTransform();
 
         do
@@ -115,7 +107,7 @@ public class BulletEmitter : MonoBehaviour
         float radians = (-angle + 90) * Mathf.PI / 180f;
 
         // Get the X and Y coordinates of the corner point.
-       return new Vector2(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius) + centerPosition;
+        return new Vector2(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius) + centerPosition;
     }
 
     public void SetWaitTimeBetweenBullets(float waitTime)

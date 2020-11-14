@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
     private float yMin;
     private float yMax;
 
-
     private BulletEmitter bulletEmitter;
     private Health health;
     private AudioManager audioManager;
+    private List<IPowerup> powerups;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +30,15 @@ public class Player : MonoBehaviour
         bulletEmitter = GetComponent<BulletEmitter>();
         health = GetComponent<Health>();
         audioManager = AudioManager.instance;
+        powerups = new List<IPowerup>();
+
+        AddPowerup(new Minigun());
     }
 
     // Update is called once per frame
     void Update()
     {
+        ApplyPowerups();
         Move();
         Fire();
     }
@@ -78,6 +82,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void ApplyPowerups()
+    {
+        if (powerups.Count <= 0)
+        {
+            return;
+        }
+
+        foreach (IPowerup powerup in powerups)
+        {
+            powerup.Apply(this);
+        }
+    }
+
     public float GetHealth()
     {
         if (!health)
@@ -86,5 +103,15 @@ public class Player : MonoBehaviour
         }
 
         return health.GetHealth();
+    }
+
+    public void AddPowerup(IPowerup powerup)
+    {
+        if (powerups.Contains(powerup))
+        {
+            return;
+        }
+
+        powerups.Add(powerup);
     }
 }
