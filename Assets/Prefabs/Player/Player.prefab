@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89e38d2aaccfd004eac4f17c573d22cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6890917514262629253, guid: a0d57f517119b489e808782daed70a71,
     type: 3}
   bulletOriginPoint: {fileID: 1005692508}
+  soundEffectName: Default Laser
   bulletSpeed: 8
   bulletCountPerWave: 1
   wavesPerPulse: 1
@@ -221,6 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  explosionPrefab: {fileID: 0}
+  explosionSfxName: Small Explosion
 --- !u!50 &6394831641894863844
 Rigidbody2D:
   serializedVersion: 4
