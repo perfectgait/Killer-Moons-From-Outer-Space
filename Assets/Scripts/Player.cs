@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         health = GetComponent<Health>();
         audioManager = AudioManager.instance;
 
-        //AddPowerup(typeof(Minigun));
+        AddPowerup(typeof(Minigun));
     }
 
     // Update is called once per frame

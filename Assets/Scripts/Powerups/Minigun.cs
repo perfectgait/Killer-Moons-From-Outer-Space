@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Minigun : Powerup
 {
-    private float waitTimeBetweenBullets = 0.1f;
+    private float waitTimeBetweenBullets = 0.15f;
     private float maximumHeatLevel = 3.0f;
     private float currentHeatLevel = 0.0f;
-    private bool wasFiring = false;
-    private float timeOfFiringStateChange = 0.0f;
+    // Lower value means the weapon will overheat more slowly
+    private float rateOfHeatIncreaseRelativeToTime = 0.75f;
+    // Higher value means the weapon will cooldown more quickly
+    private float rateOfHeatDecreaseRelativeToTime = 2.0f;
+    private float overheatExtraHeatApplied = 3.0f;
+    private bool overheated = false;
 
     public override void Apply(MonoBehaviour behaviour)
     {
@@ -17,19 +21,11 @@ public class Minigun : Powerup
             Player player = behaviour as Player;
             BulletEmitter emitter = behaviour.GetComponent<BulletEmitter>();
 
-            player.SetCanFire(CanFire());
-
             if (emitter)
             {
-                bool wasPreviouslyFiring = wasFiring;
+                AdjustHeatLevel(player.IsFiring());
 
-                //if (player.IsFiring())
-                //{
-                //    wasFiring = true;
-                //}
-                wasFiring = player.IsFiring();
-
-                AdjustHeatLevel(wasPreviouslyFiring, player.IsFiring());
+                player.SetCanFire(CanFire());
 
                 emitter.SetWaitTimeBetweenBullets(waitTimeBetweenBullets);
                 emitter.SetBulletSfx("Fast Laser");
@@ -39,40 +35,38 @@ public class Minigun : Powerup
 
     private bool CanFire()
     {
-        //return true;
-
-        return currentHeatLevel < maximumHeatLevel;
+        return !overheated && currentHeatLevel < maximumHeatLevel;
     }
 
-    private void AdjustHeatLevel(bool wasPreviouslyFiring, bool isFiring)
+    private void AdjustHeatLevel(bool isFiring)
     {
-        if ((isFiring && !wasPreviouslyFiring) || (wasPreviouslyFiring && !isFiring))
-        {
-            timeOfFiringStateChange = Time.time;
-
-            Debug.Log("timeOfFiringStateChange: " + timeOfFiringStateChange);
-        }
-
         if (isFiring)
         {
-            //currentHeatLevel = timeOfFiringStateChange + Time.deltaTime;
-            currentHeatLevel = Time.time - timeOfFiringStateChange;
-            currentHeatLevel = Mathf.Min(maximumHeatLevel, currentHeatLevel);
+            currentHeatLevel += Time.deltaTime * rateOfHeatIncreaseRelativeToTime;
+
+            // If the player overheats the weapon they cannot fire again until the weapon has fully cooled down
+            if (currentHeatLevel >= maximumHeatLevel)
+            {
+                overheated = true;
+                currentHeatLevel += overheatExtraHeatApplied;
+            }
+            else
+            {
+                currentHeatLevel = Mathf.Min(maximumHeatLevel, currentHeatLevel);
+            }
         }
         else
         {
-            currentHeatLevel -= Time.time - timeOfFiringStateChange;
+            currentHeatLevel -= Time.deltaTime * rateOfHeatDecreaseRelativeToTime;
+            currentHeatLevel = Mathf.Max(0, currentHeatLevel);
+        }
+
+        // The player overheated the weapon but the weapon has fully cooled down
+        if (overheated && currentHeatLevel <= 0)
+        {
+            overheated = false;
         }
 
         Debug.Log("currentHeatLevel: " + currentHeatLevel);
-        // @TODO Every second increase heat by 1
-        // @TODO Every 0.5 second decrease heat by 1
-
-
-        // @TODO if currentHeatLevel > 0 and is not firing, decrease heat level
-
-        // @TODO if is firing, increase heat level
-
-        // @TODO Ensure heat level is between 0 and maximum
     }
 }
