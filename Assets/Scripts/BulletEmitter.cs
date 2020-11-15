@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BulletEmitter : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class BulletEmitter : MonoBehaviour
     [SerializeField] int startAngle = 90;
     [Range(0, 360)]
     [SerializeField] int endAngle = 270;
+    [Tooltip("+/- angle variance to apply to the bullets")]
+    [SerializeField] int angleVariance = 0;
 
     [Header("Pulse")]
     [Tooltip("Time between each individual bullet or wave of bullets")]
@@ -70,8 +73,10 @@ public class BulletEmitter : MonoBehaviour
             {
                 audioManager.PlaySoundEffect(soundEffectName);
 
-                float angleStep = (endAngle - startAngle) / bulletCountPerWave - 1;
-                float angle = startAngle;
+                int randomAngleVariance = Random.Range(-angleVariance, angleVariance);
+                float angle = startAngle + randomAngleVariance;
+                float angleStep = ((endAngle + randomAngleVariance) - angle) / bulletCountPerWave - 1;
+
                 for (var j = 1; j <= bulletCountPerWave; j++)
                 {
                     float dirX = bulletOriginTransform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
@@ -124,5 +129,10 @@ public class BulletEmitter : MonoBehaviour
     public void SetBulletSfx(string soundName)
     {
         soundEffectName = soundName;
+    }
+
+    public void SetAngleVariance(int variance)
+    {
+        angleVariance = variance;
     }
 }

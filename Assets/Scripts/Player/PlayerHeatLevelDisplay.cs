@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeatLevelDisplay : MonoBehaviour
+public class PlayerHeatLevelDisplay : MonoBehaviour
 {
     private Player player;
     private Minigun minigun;

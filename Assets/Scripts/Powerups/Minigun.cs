@@ -29,6 +29,7 @@ public class Minigun : Powerup
 
                 emitter.SetWaitTimeBetweenBullets(waitTimeBetweenBullets);
                 emitter.SetBulletSfx("Fast Laser");
+                emitter.SetAngleVariance(GetAngleVariance());
             }
         }
     }
@@ -66,8 +67,20 @@ public class Minigun : Powerup
         {
             overheated = false;
         }
+    }
 
-        Debug.Log("currentHeatLevel: " + currentHeatLevel);
+    private int GetAngleVariance()
+    {
+        if (currentHeatLevel <= 1)
+        {
+            return 0;
+        }
+        else if (currentHeatLevel <= 2)
+        {
+            return 5;
+        }
+
+        return 10;
     }
 
     public float GetCurrentHeatLevel()
