@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
+    type: 3}
 --- !u!70 &2630403541769558101
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

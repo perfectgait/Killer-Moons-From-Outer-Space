@@ -5,13 +5,17 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float health;
+    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] string explosionSfxName = "Small Explosion";
 
     IFrames iframes;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
         iframes = GetComponent<IFrames>();
+        audioManager = AudioManager.instance;
     }
 
     public void Damage(float amount)
@@ -35,6 +39,10 @@ public class Health : MonoBehaviour
         {
             Kill();
         }
+        else
+        {
+            audioManager.PlaySoundEffect("Damage Hit");
+        }
     }
 
     public float GetHealth()
@@ -45,5 +53,16 @@ public class Health : MonoBehaviour
     private void Kill()
     {
         Destroy(gameObject);
+        Explode();
+    }
+
+    private void Explode()
+    {
+        if (explosionPrefab)
+        {
+            audioManager.PlaySoundEffect(explosionSfxName);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Destroy(explosion, 1f);
+        }
     }
 }

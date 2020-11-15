@@ -74,6 +74,21 @@ MonoBehaviour:
     volume: 0.45
     pitch: 1
     loop: 0
+  - name: Small Explosion
+    audioClip: {fileID: 8300000, guid: 459babec824c81a4f86c69c5d4a089d8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Medium 1 Explosion
+    audioClip: {fileID: 8300000, guid: c5b8afc6699f5c743bf537c0bd6fe256, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Medium 2 Explosion
+    audioClip: {fileID: 8300000, guid: e7b74417df96ca44889ddc16b90ee107, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   musicTracks:
   - name: Level 1
     audioClip: {fileID: 8300000, guid: c9e634f1bd06b424fbd901040c823cfc, type: 3}

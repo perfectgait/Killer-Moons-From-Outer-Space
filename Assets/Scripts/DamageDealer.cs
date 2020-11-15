@@ -19,7 +19,6 @@ public class DamageDealer : MonoBehaviour
 
         if (health)
         {
-            audioManager.PlaySoundEffect("Damage Hit");
             health.Damage(damage);
         }
 
