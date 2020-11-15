@@ -121,4 +121,16 @@ public class Player : MonoBehaviour
     {
         this.canFire = canFire;
     }
+
+    public float GetHeatLevel()
+    {
+        Minigun minigun = gameObject.GetComponent<Minigun>();
+
+        if (minigun)
+        {
+            return minigun.GetCurrentHeatLevel();
+        }
+
+        return 1.0f;
+    }
 }

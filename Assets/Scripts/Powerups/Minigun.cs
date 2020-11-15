@@ -69,4 +69,9 @@ public class Minigun : Powerup
 
         Debug.Log("currentHeatLevel: " + currentHeatLevel);
     }
+
+    public float GetCurrentHeatLevel()
+    {
+        return currentHeatLevel;
+    }
 }
