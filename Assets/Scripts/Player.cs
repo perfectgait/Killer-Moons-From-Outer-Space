@@ -17,10 +17,11 @@ public class Player : MonoBehaviour
     private float xMax;
     private float yMin;
     private float yMax;
-
     private BulletEmitter bulletEmitter;
     private Health health;
     private AudioManager audioManager;
+    private bool isFiring = false;
+    private bool canFire = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
         health = GetComponent<Health>();
         audioManager = AudioManager.instance;
 
-        AddPowerup(typeof(Minigun));
+        //AddPowerup(typeof(Minigun));
     }
 
     // Update is called once per frame
@@ -68,14 +69,16 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canFire)
         {
             firingCoroutine = StartCoroutine(bulletEmitter.Emit());
+            isFiring = true;
         }
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") || !canFire)
         {
             StopCoroutine(firingCoroutine);
+            isFiring = false;
         }
     }
 
@@ -107,5 +110,15 @@ public class Player : MonoBehaviour
     public void AddPowerup(System.Type systemType)
     {
         gameObject.AddComponent(systemType);
+    }
+
+    public bool IsFiring()
+    {
+        return isFiring;
+    }
+
+    public void SetCanFire(bool canFire)
+    {
+        this.canFire = canFire;
     }
 }

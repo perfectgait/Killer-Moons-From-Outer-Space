@@ -38,7 +38,6 @@ public class BulletEmitter : MonoBehaviour
     private Transform bulletOriginTransform;
     private AudioManager audioManager;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +90,7 @@ public class BulletEmitter : MonoBehaviour
         } while (continousEmission);
     }
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         SetBulletOriginTransform();
@@ -115,7 +114,7 @@ public class BulletEmitter : MonoBehaviour
         // Get the X and Y coordinates of the corner point.
         return new Vector2(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius) + centerPosition;
     }
-    #endif
+#endif
 
     public void SetWaitTimeBetweenBullets(float waitTime)
     {
