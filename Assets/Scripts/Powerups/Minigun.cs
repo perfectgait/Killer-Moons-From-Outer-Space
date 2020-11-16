@@ -13,6 +13,16 @@ public class Minigun : Powerup
     private float rateOfHeatDecreaseRelativeToTime = 2.0f;
     private float overheatExtraHeatApplied = 3.0f;
     private bool overheated = false;
+    // How long before the cooldown begins
+    private float cooldownDelay = 0.2f;
+    private float cooldownCountdown = 0.0f;
+
+    // Update is called once per frame
+    void Update()
+    {
+        cooldownCountdown -= Time.deltaTime;
+        cooldownCountdown = Mathf.Max(0, cooldownCountdown);
+    }
 
     public override void Apply(MonoBehaviour behaviour)
     {
@@ -44,6 +54,7 @@ public class Minigun : Powerup
         if (isFiring)
         {
             currentHeatLevel += Time.deltaTime * rateOfHeatIncreaseRelativeToTime;
+            cooldownCountdown = cooldownDelay;
 
             // If the player overheats the weapon they cannot fire again until the weapon has fully cooled down
             if (currentHeatLevel >= maximumHeatLevel)
@@ -56,7 +67,7 @@ public class Minigun : Powerup
                 currentHeatLevel = Mathf.Min(maximumHeatLevel, currentHeatLevel);
             }
         }
-        else
+        else if (cooldownCountdown <= 0)
         {
             currentHeatLevel -= Time.deltaTime * rateOfHeatDecreaseRelativeToTime;
             currentHeatLevel = Mathf.Max(0, currentHeatLevel);
