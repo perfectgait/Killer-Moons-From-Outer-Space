@@ -36,6 +36,11 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void LoadNextSceneWithWaitTime()
+    {
+        StartCoroutine(WaitForTime());
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
