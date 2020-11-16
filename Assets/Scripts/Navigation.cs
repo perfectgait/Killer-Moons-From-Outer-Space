@@ -40,12 +40,11 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler
 
     public IEnumerator HandleSubmit()
     {
-        // TODO: Fix timing of animation and sound effect
-        // TODO: Why is there sometimes a delay when triggering the animation?
         menuCursorAnimator.SetTrigger("Explode");
         audioManager.PlaySoundEffect("Menu Select");
-        yield return new WaitForSeconds(menuCursorAnimator.GetCurrentAnimatorStateInfo(0).length + menuCursorAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        yield return new WaitForSeconds(.3f);
         Destroy(menuCursor);
+        yield return new WaitForSeconds(.3f);
         if (gameObject.name == "Start Button")
         {
             FindObjectOfType<LevelLoader>().LoadNextScene();
