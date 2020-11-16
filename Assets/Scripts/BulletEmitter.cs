@@ -135,4 +135,9 @@ public class BulletEmitter : MonoBehaviour
     {
         angleVariance = variance;
     }
+
+    public float GetWaitTimeBetweenBullets()
+    {
+        return waitTimeBetweenBullets;
+    }
 }
