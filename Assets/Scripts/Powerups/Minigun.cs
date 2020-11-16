@@ -17,6 +17,12 @@ public class Minigun : Powerup
     private float cooldownDelay = 0.2f;
     private float cooldownCountdown = 0.0f;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        FindObjectOfType<PlayerUIController>().ShowHeatLevelSlider();
+    }
+
     // Update is called once per frame
     void Update()
     {
