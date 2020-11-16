@@ -10,18 +10,19 @@ public class Player : MonoBehaviour
     [SerializeField] float xLeftPadding = 0.5f;
     [SerializeField] float yTopPadding = 0.5f;
     [SerializeField] float yBottomPadding = 0.5f;
-    [SerializeField] float projectileFiringPeriod = 1.0f;
 
     private Coroutine firingCoroutine;
+    private BulletEmitter bulletEmitter;
+    private Health health;
     private float xMin;
     private float xMax;
     private float yMin;
     private float yMax;
-    private BulletEmitter bulletEmitter;
-    private Health health;
-    private AudioManager audioManager;
     private bool isFiring = false;
     private bool canFire = true;
+    private float canFireCountdown = 0.0f;
+    // Offset is used so a human can fire at the same rate as the computer if they chose to rapid press the fire button vs. hold it down
+    private float waitTimeBetweenBulletsOffset = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,6 @@ public class Player : MonoBehaviour
         SetupMovementBoundaries();
         bulletEmitter = GetComponent<BulletEmitter>();
         health = GetComponent<Health>();
-        audioManager = AudioManager.instance;
 
         AddPowerup(typeof(Minigun));
     }
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     {
         ApplyPowerups();
         Move();
+        UpdateCanFireCountdownTimer();
         Fire();
     }
 
@@ -69,13 +70,19 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1") && canFire)
+        if (Input.GetButtonDown("Fire1") && CanFire())
         {
             firingCoroutine = StartCoroutine(bulletEmitter.Emit());
             isFiring = true;
         }
 
-        if (Input.GetButtonUp("Fire1") || !canFire)
+        // If the player has let go of the fire button, start the countdown timer
+        if (Input.GetButtonUp("Fire1") && isFiring)
+        {
+            canFireCountdown = bulletEmitter.GetWaitTimeBetweenBullets() - waitTimeBetweenBulletsOffset;
+        }
+
+        if (Input.GetButtonUp("Fire1") || !CanFire())
         {
             StopCoroutine(firingCoroutine);
             isFiring = false;
@@ -95,6 +102,26 @@ public class Player : MonoBehaviour
         {
             powerup.Apply(this);
         }
+    }
+
+    private bool CanFire()
+    {
+        if (!canFire)
+        {
+            return false;
+        }
+
+        if (canFireCountdown > 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private void UpdateCanFireCountdownTimer()
+    {
+        canFireCountdown -= Time.deltaTime;
     }
 
     public float GetHealth()
