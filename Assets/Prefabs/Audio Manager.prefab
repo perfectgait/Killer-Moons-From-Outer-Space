@@ -95,3 +95,8 @@ MonoBehaviour:
     volume: 0.7
     pitch: 1
     loop: 1
+  - name: Art Block
+    audioClip: {fileID: 8300000, guid: 52871ab4e87f871449199808bb55d1fb, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
