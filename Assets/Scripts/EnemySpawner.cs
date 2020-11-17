@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] int enemyCount = 1;
     [SerializeField] float waitTimeBetweenSpawn = 0;
-
-    // TODO: Temporary variable for testing - likely not how we will organize levels
     [SerializeField] float startSpawningAfter = 0;
 
     // Start is called before the first frame update
@@ -35,4 +34,12 @@ public class EnemySpawner : MonoBehaviour
             spawnedEnemies++;
         }
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Sprite enemySprite = enemyPrefab.GetComponent<SpriteRenderer>().sprite;
+        Gizmos.DrawIcon(transform.position, AssetDatabase.GetAssetPath(enemySprite), true);
+    }
+#endif
 }
