@@ -526,6 +526,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8528893723935187081, guid: 559f070fa24904b388b7987851390bf8,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528893723935187081, guid: 559f070fa24904b388b7987851390bf8,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8528893723935187083, guid: 559f070fa24904b388b7987851390bf8,
         type: 3}
       propertyPath: m_Name
@@ -4037,6 +4047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Starfield Far
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404737447635493626, guid: 29a10b15a617d3e4f9848796aa8dd465,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2404737447635493627, guid: 29a10b15a617d3e4f9848796aa8dd465,
         type: 3}
