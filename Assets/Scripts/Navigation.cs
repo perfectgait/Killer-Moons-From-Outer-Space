@@ -5,25 +5,33 @@ using UnityEngine.EventSystems;
 
 public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler
 {
+    const string START_BUTTON = "Start Button";
+    const string RESTART_BUTTON = "Restart Button";
+    const string MAIN_MENU_BUTTON = "Main Menu Button";
+    const string QUIT_BUTTON = "Quit Button";
+
     bool isInitialSelection = true;
     
     GameObject menuCursor;
     Animator menuCursorAnimator;
     AudioManager audioManager;
-
+    EventSystem eventSystem;
+    LevelLoader levelLoader;
 
     private void Start()
     {
         menuCursor = GameObject.Find("Menu Cursor");
         menuCursorAnimator = menuCursor.GetComponent<Animator>();
         audioManager = AudioManager.instance;
+        eventSystem = FindObjectOfType<EventSystem>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         menuCursor.transform.position = new Vector3(menuCursor.transform.position.x, transform.position.y);
 
-        if (gameObject.name == "Start Button" && isInitialSelection)
+        if (gameObject.name == eventSystem.firstSelectedGameObject.name && isInitialSelection)
         {
             isInitialSelection = false;
         }
@@ -45,13 +53,22 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler
         yield return new WaitForSeconds(.3f);
         Destroy(menuCursor);
         yield return new WaitForSeconds(.3f);
-        if (gameObject.name == "Start Button")
+
+        switch (gameObject.name)
         {
-            FindObjectOfType<LevelLoader>().LoadNextScene();
-        }
-        else
-        {
-            FindObjectOfType<LevelLoader>().QuitGame();
+            case START_BUTTON:
+            case RESTART_BUTTON:
+                levelLoader.LoadFirstLevel();
+                break;
+            case MAIN_MENU_BUTTON:
+                levelLoader.LoadMainMenu();
+                break;
+            case QUIT_BUTTON:
+                levelLoader.QuitGame();
+                break;
+            default:
+                Debug.Log("Can't submit: Unknown button name");
+                break;
         }
     }
 }

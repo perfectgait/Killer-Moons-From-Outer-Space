@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 028dc77ec9d0f5243a9085ccebf0a85c
+guid: f641a862ef5cbe640ba12bb738fe89e8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Irish Grover
+  - Erica One
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -6,26 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] int timeToWait = 4;
-    int currentSceneIndex;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        // TODO: Add this back in if we add a splash screen
-        //if (currentSceneIndex == 0)
-        //{
-        //    StartCoroutine(WaitForTime());
-        //}
-    }
-
-    private IEnumerator WaitForTime()
-    {
-        yield return new WaitForSeconds(timeToWait);
-        LoadNextScene();
-    }
-
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -36,11 +16,6 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void LoadNextSceneWithWaitTime()
-    {
-        StartCoroutine(WaitForTime());
-    }
-
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -49,5 +24,15 @@ public class LevelLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void LoadFirstLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadLoseScreen()
+    {
+        SceneManager.LoadScene("Lose Screen");
     }
 }
