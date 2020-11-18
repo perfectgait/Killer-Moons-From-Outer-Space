@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     IFrames iframes;
     AudioManager audioManager;
     SpriteRenderer spriteRenderer;
+    LevelLoader levelLoader;
 
     IEnumerator flashingCoroutine;
 
@@ -22,6 +23,7 @@ public class Health : MonoBehaviour
         // GetComponentInChildren finds the first component in the parent or child
         // so this works for both the player's body and the enemies
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
 
     public void Damage(float amount)
@@ -74,7 +76,7 @@ public class Health : MonoBehaviour
         // Iterate twice the length of times - that way numTimes is "how many times is it turned on", not "how many times does it flip".
         for (int i = 0; i < numTimes * 2; i++)
         {
-            GetComponentInChildren<SpriteRenderer>().material.SetFloat("_FlashAmount", makeSpriteWhite ? 1f : 0f);
+            spriteRenderer.material.SetFloat("_FlashAmount", makeSpriteWhite ? 1f : 0f);
             makeSpriteWhite = !makeSpriteWhite;
             yield return new WaitForSeconds(0.05f);
         }
@@ -82,6 +84,12 @@ public class Health : MonoBehaviour
 
     private void Kill()
     {
+        if (gameObject.name == "Player")
+        {
+            StartCoroutine(HandlePlayerDeath());
+            return;
+        }
+
         Destroy(gameObject);
         Explode();
     }
@@ -94,5 +102,19 @@ public class Health : MonoBehaviour
             GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(explosion, 1f);
         }
+    }
+
+    public IEnumerator HandlePlayerDeath()
+    {
+        // I couldn't simply call Destroy because apparently that also cancels
+        // any coroutines running on that gameobject
+        // So instead, I simply disable the sprite renderer for the player
+        spriteRenderer.enabled = false;
+        audioManager.StopCurrentlyPlayingMusic();
+        Explode();
+
+        yield return new WaitForSeconds(2f);
+
+        levelLoader.LoadLoseScreen();
     }
 }

@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void StopCurrentlyPlayingMusic()
+    public void StopCurrentlyPlayingMusic()
     {
         foreach (Sound track in musicTracks)
         {

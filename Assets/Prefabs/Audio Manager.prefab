@@ -89,6 +89,21 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Menu Cursor Explosion
+    audioClip: {fileID: 8300000, guid: 1c3d352e480f2514eb674737044e4c80, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Menu Move
+    audioClip: {fileID: 8300000, guid: a10960fe15f6bfa4e9af68b857b2a602, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Menu Select
+    audioClip: {fileID: 8300000, guid: 0fb9a39c2b21f754bacd4c109d9da398, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   musicTracks:
   - name: Level 1
     audioClip: {fileID: 8300000, guid: c9e634f1bd06b424fbd901040c823cfc, type: 3}
