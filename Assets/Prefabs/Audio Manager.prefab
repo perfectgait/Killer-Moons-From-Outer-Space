@@ -115,3 +115,8 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 1
+  - name: Game Over
+    audioClip: {fileID: 8300000, guid: 2bab20fad9554054c96ae172fcd490ef, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1

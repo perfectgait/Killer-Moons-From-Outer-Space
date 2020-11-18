@@ -110,10 +110,12 @@ public class Health : MonoBehaviour
         // any coroutines running on that gameobject
         // So instead, I simply disable the sprite renderer for the player
         spriteRenderer.enabled = false;
-        audioManager.StopCurrentlyPlayingMusic();
+        GetComponent<CapsuleCollider2D>().enabled = false;
         Explode();
 
-        yield return new WaitForSeconds(2f);
+        // Playing game over music before the scene loads so that the ambient sounds can play first
+        audioManager.PlayMusic("Game Over");
+        yield return new WaitForSeconds(3.9f);
 
         levelLoader.LoadLoseScreen();
     }

@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1d178ba5b8a08409f7bacd683dade4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicToPlay: Art Block
+  musicToPlay: 
 --- !u!4 &26960996
 Transform:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 1.2287598}
+  m_AnchoredPosition: {x: 0, y: 1.9787598}
   m_SizeDelta: {x: 1672.7, y: 439}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &498236528
@@ -993,7 +993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.99}
+  m_AnchoredPosition: {x: 0, y: 1.49}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1552803003

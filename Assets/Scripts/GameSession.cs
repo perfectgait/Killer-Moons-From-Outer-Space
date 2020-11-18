@@ -13,7 +13,10 @@ public class GameSession : MonoBehaviour
     void Start()
     {
         audioManager = AudioManager.instance;
-        audioManager.PlayMusic(musicToPlay);
+        if (!string.IsNullOrEmpty(musicToPlay))
+        {
+            audioManager.PlayMusic(musicToPlay);
+        }
     }
 
     // Update is called once per frame
