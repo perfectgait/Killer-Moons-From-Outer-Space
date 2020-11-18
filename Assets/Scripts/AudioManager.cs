@@ -49,8 +49,21 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(string name)
     {
-        StopCurrentlyPlayingMusic();
-        PlaySound(name, musicTracks);
+        Sound currentTrack = GetCurrentlyPlayingMusic();
+
+        // If there is no music currently playing, play the selection
+        if (currentTrack == null)
+        {
+            PlaySound(name, musicTracks);
+            return;
+        }
+
+        // If something is already playing, only play the new music if it is a different selection
+        if (currentTrack.GetName() != name)
+        {
+            currentTrack.Stop();
+            PlaySound(name, musicTracks);
+        }
     }
 
     private void PlaySound(string name, Sound[] soundArray)
@@ -63,6 +76,19 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public Sound GetCurrentlyPlayingMusic()
+    {
+        foreach (Sound track in musicTracks)
+        {
+            if (track.IsPlaying())
+            {
+                return track;
+            }
+        }
+
+        return null;
     }
 
     public void StopCurrentlyPlayingMusic()

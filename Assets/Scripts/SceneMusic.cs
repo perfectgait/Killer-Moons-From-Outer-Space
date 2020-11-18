@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSession : MonoBehaviour
+public class SceneMusic : MonoBehaviour
 {
     [SerializeField] string musicToPlay;
 
