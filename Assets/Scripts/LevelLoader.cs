@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+    }
+
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -23,7 +31,11 @@ public class LevelLoader : MonoBehaviour
 
     public void QuitGame()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 
     public void LoadFirstLevel()
@@ -35,4 +47,5 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Lose Screen");
     }
+
 }
