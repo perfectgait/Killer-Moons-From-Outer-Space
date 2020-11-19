@@ -125,6 +125,7 @@ MonoBehaviour:
   wavesPerPulse: 1
   startAngle: 270
   endAngle: 270
+  angleVariance: 0
   waitTimeBetweenBullets: 0.17
   waitTimeBetweenPulse: 2
   continousEmission: 1
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Medium 1 Explosion

@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     // Offset is used so a human can fire at the same rate as the computer if they chose to rapid press the fire button vs. hold it down
     private float waitTimeBetweenBulletsOffset = 0.2f;
 
+    // Just used for testing the pacing of the levels
+    [SerializeField] bool startWithMinigun = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,10 @@ public class Player : MonoBehaviour
         bulletEmitter = GetComponent<BulletEmitter>();
         health = GetComponent<Health>();
 
-        AddPowerup(typeof(Minigun));
+        if (startWithMinigun)
+        {
+            AddPowerup(typeof(Minigun));
+        }
     }
 
     // Update is called once per frame

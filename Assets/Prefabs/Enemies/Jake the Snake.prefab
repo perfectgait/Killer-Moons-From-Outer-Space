@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 3237919335218672822, guid: 2927cf77e55aa4446b2f8d3438eb8700,
     type: 3}
-  movementSpeed: 5
+  movementSpeed: 4
 --- !u!114 &1454599125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +123,9 @@ MonoBehaviour:
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
-  startAngle: 260
-  endAngle: 230
+  startAngle: 270
+  endAngle: 225
+  angleVariance: 0
   waitTimeBetweenBullets: 0.25
   waitTimeBetweenPulse: 1.5
   continousEmission: 1
