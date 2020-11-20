@@ -111,6 +111,7 @@ public class Health : MonoBehaviour
         // So instead, I simply disable the sprite renderer for the player
         spriteRenderer.enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<BulletEmitter>().enabled = false;
         Explode();
 
         // Playing game over music before the scene loads so that the ambient sounds can play first

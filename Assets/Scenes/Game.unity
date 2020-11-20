@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 286165778}
   - component: {fileID: 286165780}
   - component: {fileID: 286165779}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shredder Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2116,7 +2116,7 @@ GameObject:
   - component: {fileID: 575665895}
   - component: {fileID: 575665896}
   - component: {fileID: 575665897}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shredder Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2551,7 +2551,7 @@ GameObject:
   - component: {fileID: 855493540}
   - component: {fileID: 855493542}
   - component: {fileID: 855493541}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shredder Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 1309426902}
   - component: {fileID: 1309426903}
   - component: {fileID: 1309426904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shredder Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4277,7 +4277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1700914122
 GameObject:
@@ -5825,6 +5825,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e806dbd9fda94dd580b196b936cba46, type: 3}
+--- !u!1001 &1043708201099777347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.806392
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205805941294521619, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811145613511239116, guid: 54cbeb1395453c44aa68aaf416f6a812,
+        type: 3}
+      propertyPath: m_Name
+      value: Linear Path
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54cbeb1395453c44aa68aaf416f6a812, type: 3}
 --- !u!1001 &2103529381314643440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6363,11 +6432,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198959610118144791, guid: 13b02d0060f475141b76111dd28703cb,
-        type: 3}
-      propertyPath: pathCreator
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
