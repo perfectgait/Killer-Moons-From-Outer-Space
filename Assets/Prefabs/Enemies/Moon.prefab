@@ -247,13 +247,14 @@ GameObject:
   - component: {fileID: 1904239270}
   - component: {fileID: 1132010496}
   - component: {fileID: 1132010497}
+  - component: {fileID: 8933285020939277292}
   m_Layer: 11
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7198959610118144784
 Transform:
   m_ObjectHideFlags: 0
@@ -338,6 +339,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
-  explosionPrefab: {fileID: 4047538439607675957, guid: cfd929ac1637adb43ac1e154a05c9eb2,
+--- !u!114 &8933285020939277292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198959610118144786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 1353497617}
+  explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Small Explosion
