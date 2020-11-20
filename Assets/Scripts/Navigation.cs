@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler
+public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointerEnterHandler
 {
     const string START_BUTTON = "Start Button";
     const string RESTART_BUTTON = "Restart Button";
@@ -23,7 +23,7 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler
         menuCursor = GameObject.Find("Menu Cursor");
         menuCursorAnimator = menuCursor.GetComponent<Animator>();
         audioManager = AudioManager.instance;
-        eventSystem = FindObjectOfType<EventSystem>();
+        eventSystem = EventSystem.current;
         levelLoader = FindObjectOfType<LevelLoader>();
     }
 
@@ -69,6 +69,14 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler
             default:
                 Debug.Log("Can't submit: Unknown button name");
                 break;
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!eventSystem.alreadySelecting)
+        {
+            eventSystem.SetSelectedGameObject(gameObject);
         }
     }
 }
