@@ -6,9 +6,11 @@ using UnityEngine;
 public class PathMovement : MonoBehaviour
 {
     [SerializeField] PathCreator pathCreator;
-    [SerializeField] float movementSpeed = 1f;
+    [Range(0f, 1f)]
+    [SerializeField] public float movementSpeed = 1f;
 
-    float distanceTravelled;
+    public float distanceTravelled;
+    public bool finishedMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,14 @@ public class PathMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceTravelled += movementSpeed * Time.deltaTime;
-        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
+        if (!finishedMoving)
+        {
+            distanceTravelled += 1f * movementSpeed * Time.deltaTime;
+            distanceTravelled = Mathf.Clamp(distanceTravelled, 0f, 1f);
+            transform.position = pathCreator.path.GetPointAtTime(distanceTravelled, EndOfPathInstruction.Stop);
+            finishedMoving = distanceTravelled == 1f;
+        }
     }
+
+    // TODO: Slow movement along the way
 }

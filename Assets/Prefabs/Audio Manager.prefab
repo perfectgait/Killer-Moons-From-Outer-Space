@@ -104,6 +104,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Mechanical Noise
+    audioClip: {fileID: 8300000, guid: 8d9d284474fbd654888ea3eb98a2750a, type: 3}
+    volume: 0.648
+    pitch: 1
+    loop: 0
   musicTracks:
   - name: Level 1
     audioClip: {fileID: 8300000, guid: c9e634f1bd06b424fbd901040c823cfc, type: 3}
@@ -122,6 +127,11 @@ MonoBehaviour:
     loop: 1
   - name: Ending
     audioClip: {fileID: 8300000, guid: 33722969f4266c0448e3c84f539e2624, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+  - name: Boss Battle
+    audioClip: {fileID: 8300000, guid: 03281dded25fed949923144b9c326ecd, type: 3}
     volume: 0.8
     pitch: 1
     loop: 1
