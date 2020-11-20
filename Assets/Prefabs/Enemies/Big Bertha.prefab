@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8639680705128787553}
   - component: {fileID: 7816217613163408677}
   - component: {fileID: 6096430020054747234}
+  - component: {fileID: -8364599563460781659}
   m_Layer: 8
   m_Name: Big Bertha
   m_TagString: Untagged
@@ -154,9 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
-  explosionPrefab: {fileID: 4047538439607675957, guid: cfd929ac1637adb43ac1e154a05c9eb2,
-    type: 3}
-  explosionSfxName: Medium 2 Explosion
 --- !u!70 &8639680705128787553
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -208,3 +206,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8364599563460781659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017281291373717544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 2017281291373717544}
+  explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
+    type: 3}
+  explosionSfxName: Medium 2 Explosion

@@ -274,6 +274,6 @@ MonoBehaviour:
   durationBetweenFlashes: 0.05
   objectToFlash: {fileID: 610238544}
   levelLoader: {fileID: 0}
-  explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
+  explosionPrefab: {fileID: 4047538439607675957, guid: cfd929ac1637adb43ac1e154a05c9eb2,
     type: 3}
-  explosionSfxName: Small Explosion
+  explosionSfxName: Medium 2 Explosion

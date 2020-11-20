@@ -23,6 +23,7 @@ public class PlayerDamageTaker : DamageTaker
         spriteRenderer = objectToFlash.GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
         iframes = GetComponent<IFrames>();
+        audioManager = AudioManager.instance;
     }
 
     public override void TakeDamage(float damage)

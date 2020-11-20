@@ -129,9 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
-    type: 3}
-  explosionSfxName: Small Explosion
 --- !u!70 &2630403541769558101
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -195,7 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
   numberOfFlashes: 2
   durationBetweenFlashes: 0.05
   objectToFlash: {fileID: 247432967690536993}
