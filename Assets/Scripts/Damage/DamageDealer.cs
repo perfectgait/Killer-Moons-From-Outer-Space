@@ -15,12 +15,21 @@ public class DamageDealer : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Health health = collision.gameObject.GetComponent<Health>();
+        DamageTaker damageTaker = collision.gameObject.GetComponent<DamageTaker>();
 
-        if (health)
+        if (damageTaker)
         {
-            health.Damage(damage);
+            Debug.Log("Take Damage");
+            damageTaker.TakeDamage(damage);
         }
+
+
+        //Health health = collision.gameObject.GetComponent<Health>();
+
+        //if (health)
+        //{
+        //    health.Damage(damage);
+        //}
 
         Destroy(gameObject);
     }

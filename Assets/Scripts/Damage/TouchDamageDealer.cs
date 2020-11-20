@@ -12,28 +12,51 @@ public class TouchDamageDealer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Health health = collision.gameObject.GetComponent<Health>();
+        DamageTaker damageTaker = collision.gameObject.GetComponent<DamageTaker>();
 
-        if (health)
+        if (damageTaker)
         {
-            health.Damage(damage);
+            Debug.Log("Take Touch Damage");
+            damageTaker.TakeDamage(damage);
         }
+
+
+        //Health health = collision.gameObject.GetComponent<Health>();
+
+        //if (health)
+        //{
+        //    health.Damage(damage);
+        //}
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Health health = collision.gameObject.GetComponent<Health>();
+        DamageTaker damageTaker = collision.gameObject.GetComponent<DamageTaker>();
 
-        if (health)
+        if (damageTaker)
         {
             currentDamageFrame++;
 
             if (currentDamageFrame >= touchDamageFrame)
             {
-                health.Damage(damage);
+                damageTaker.TakeDamage(damage);
                 currentDamageFrame = 0;
             }
         }
+
+
+        //Health health = collision.gameObject.GetComponent<Health>();
+
+        //if (health)
+        //{
+        //    currentDamageFrame++;
+
+        //    if (currentDamageFrame >= touchDamageFrame)
+        //    {
+        //        health.Damage(damage);
+        //        currentDamageFrame = 0;
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)

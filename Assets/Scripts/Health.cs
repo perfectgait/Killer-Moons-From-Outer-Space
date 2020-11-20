@@ -8,7 +8,9 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] string explosionSfxName = "Small Explosion";
 
-    IFrames iframes;
+    //IFrames iframes;
+    //DamageFX damageFX;
+
     AudioManager audioManager;
     SpriteRenderer spriteRenderer;
     LevelLoader levelLoader;
@@ -18,39 +20,45 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        iframes = GetComponent<IFrames>();
+        //iframes = GetComponent<IFrames>();
+        //damageFX = GetComponent<DamageFX>();
         audioManager = AudioManager.instance;
         // GetComponentInChildren finds the first component in the parent or child
         // so this works for both the player's body and the enemies
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        levelLoader = FindObjectOfType<LevelLoader>();
+        //levelLoader = FindObjectOfType<LevelLoader>();
     }
 
     public void Damage(float amount)
     {
-        if (iframes && iframes.IsInvulnerable())
-        {
-            return;
-        }
+        //if (iframes && iframes.IsInvulnerable())
+        //{
+        //    return;
+        //}
 
         health -= amount;
 
         // Ensure health doesn't drop below zero
         health = Mathf.Max(0, health);
 
-        if (iframes)
-        {
-            iframes.Damage();
-        }
+        //if (iframes)
+        //{
+        //    iframes.Damage();
+        //}
 
-        if (health <= 0)
-        {
-            Kill();
-        }
-        else
-        {
-            HandleDamageEffects();
-        }
+        //if (health <= 0)
+        //{
+        //    Kill();
+        //}
+        //else
+        //{
+        //if (damageFX)
+        //{
+        //    damageFX.HandleDamageEffects(health);
+        //}
+
+        //HandleDamageEffects();
+        //}
     }
 
     public float GetHealth()
@@ -58,37 +66,37 @@ public class Health : MonoBehaviour
         return health;
     }
 
-    private void HandleDamageEffects()
-    {
-        audioManager.PlaySoundEffect("Damage Hit");
-        if (flashingCoroutine != null)
-        {
-            StopCoroutine(flashingCoroutine);
-        }
-        flashingCoroutine = Flash(2);
-        StartCoroutine(flashingCoroutine);
-    }
+    //private void HandleDamageEffects()
+    //{
+    //    audioManager.PlaySoundEffect("Damage Hit");
+    //    if (flashingCoroutine != null)
+    //    {
+    //        StopCoroutine(flashingCoroutine);
+    //    }
+    //    flashingCoroutine = Flash(2);
+    //    StartCoroutine(flashingCoroutine);
+    //}
 
-    private IEnumerator Flash(int numTimes)
-    {
-        bool makeSpriteWhite = true;
+    //private IEnumerator Flash(int numTimes)
+    //{
+    //    bool makeSpriteWhite = true;
 
-        // Iterate twice the length of times - that way numTimes is "how many times is it turned on", not "how many times does it flip".
-        for (int i = 0; i < numTimes * 2; i++)
-        {
-            spriteRenderer.material.SetFloat("_FlashAmount", makeSpriteWhite ? 1f : 0f);
-            makeSpriteWhite = !makeSpriteWhite;
-            yield return new WaitForSeconds(0.05f);
-        }
-    }
+    //    // Iterate twice the length of times - that way numTimes is "how many times is it turned on", not "how many times does it flip".
+    //    for (int i = 0; i < numTimes * 2; i++)
+    //    {
+    //        spriteRenderer.material.SetFloat("_FlashAmount", makeSpriteWhite ? 1f : 0f);
+    //        makeSpriteWhite = !makeSpriteWhite;
+    //        yield return new WaitForSeconds(0.05f);
+    //    }
+    //}
 
     private void Kill()
     {
-        if (gameObject.name == "Player")
-        {
-            StartCoroutine(HandlePlayerDeath());
-            return;
-        }
+        //if (gameObject.name == "Player")
+        //{
+        //    StartCoroutine(HandlePlayerDeath());
+        //    return;
+        //}
 
         Destroy(gameObject);
         Explode();
@@ -104,20 +112,20 @@ public class Health : MonoBehaviour
         }
     }
 
-    public IEnumerator HandlePlayerDeath()
-    {
-        // I couldn't simply call Destroy because apparently that also cancels
-        // any coroutines running on that gameobject
-        // So instead, I simply disable the sprite renderer for the player
-        spriteRenderer.enabled = false;
-        GetComponent<CapsuleCollider2D>().enabled = false;
-        GetComponent<BulletEmitter>().enabled = false;
-        Explode();
+    //public IEnumerator HandlePlayerDeath()
+    //{
+    //    // I couldn't simply call Destroy because apparently that also cancels
+    //    // any coroutines running on that gameobject
+    //    // So instead, I simply disable the sprite renderer for the player
+    //    spriteRenderer.enabled = false;
+    //    GetComponent<CapsuleCollider2D>().enabled = false;
+    //    GetComponent<BulletEmitter>().enabled = false;
+    //    Explode();
 
-        // Playing game over music before the scene loads so that the ambient sounds can play first
-        audioManager.PlayMusic("Game Over");
-        yield return new WaitForSeconds(3.9f);
+    //    // Playing game over music before the scene loads so that the ambient sounds can play first
+    //    audioManager.PlayMusic("Game Over");
+    //    yield return new WaitForSeconds(3.9f);
 
-        levelLoader.LoadLoseScreen();
-    }
+    //    levelLoader.LoadLoseScreen();
+    //}
 }
