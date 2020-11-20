@@ -16,17 +16,8 @@ public class TouchDamageDealer : MonoBehaviour
 
         if (damageTaker)
         {
-            Debug.Log("Take Touch Damage");
             damageTaker.TakeDamage(damage);
         }
-
-
-        //Health health = collision.gameObject.GetComponent<Health>();
-
-        //if (health)
-        //{
-        //    health.Damage(damage);
-        //}
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -43,20 +34,6 @@ public class TouchDamageDealer : MonoBehaviour
                 currentDamageFrame = 0;
             }
         }
-
-
-        //Health health = collision.gameObject.GetComponent<Health>();
-
-        //if (health)
-        //{
-        //    currentDamageFrame++;
-
-        //    if (currentDamageFrame >= touchDamageFrame)
-        //    {
-        //        health.Damage(damage);
-        //        currentDamageFrame = 0;
-        //    }
-        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
