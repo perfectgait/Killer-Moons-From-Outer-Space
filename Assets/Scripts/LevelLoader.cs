@@ -38,6 +38,11 @@ public class LevelLoader : MonoBehaviour
 #endif
     }
 
+    public void LoadWinScreen()
+    {
+        SceneManager.LoadScene("Win Screen");
+    }
+
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene(1);

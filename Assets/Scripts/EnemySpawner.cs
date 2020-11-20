@@ -10,6 +10,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float waitTimeBetweenSpawn = 0;
     [SerializeField] float startSpawningAfter = 0;
 
+    public bool isSpawning = false;
+    public bool hasFinishedSpawning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +30,15 @@ public class EnemySpawner : MonoBehaviour
     {
         int spawnedEnemies = 0;
         yield return new WaitForSeconds(startSpawningAfter);
+        isSpawning = true;
         while (spawnedEnemies < enemyCount)
         {
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(waitTimeBetweenSpawn);
             spawnedEnemies++;
         }
+        isSpawning = false;
+        hasFinishedSpawning = true;
     }
 
 #if UNITY_EDITOR

@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speedy Spawner (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5560466720347873723, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0, type: 3}
 --- !u!1 &39163721
@@ -632,6 +637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Speedy Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560466720347873723, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0, type: 3}
@@ -3676,6 +3686,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speedy Spawner (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5560466720347873723, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0, type: 3}
 --- !u!4 &1453613402 stripped
@@ -4124,6 +4139,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 236890445}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1621014652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621014654}
+  - component: {fileID: 1621014653}
+  m_Layer: 0
+  m_Name: Game State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1621014653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621014652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f946c705dbe8f4fbd945e981fba8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1621014654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621014652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1660316, y: -0.54971313, z: -11.806392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1700914122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,6 +4613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Speedy Spawner (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560466720347873723, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0, type: 3}
