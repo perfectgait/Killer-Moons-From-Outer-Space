@@ -120,3 +120,8 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 1
+  - name: Ending
+    audioClip: {fileID: 8300000, guid: 33722969f4266c0448e3c84f539e2624, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
