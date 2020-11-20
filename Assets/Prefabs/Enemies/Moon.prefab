@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 1132010497}
   - component: {fileID: 8933285020939277292}
   - component: {fileID: 34238604}
+  - component: {fileID: -4508928650610088480}
   m_Layer: 11
   m_Name: Moon
   m_TagString: Untagged
@@ -335,9 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfFlashes: 2
-  durationBetweenFlashes: 0.05
-  objectToFlash: {fileID: 1353497617}
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Small Explosion
@@ -357,3 +355,18 @@ CircleCollider2D:
   m_Offset: {x: 3.25, y: 0}
   serializedVersion: 2
   m_Radius: 4.91
+--- !u!114 &-4508928650610088480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198959610118144786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 1353497617}

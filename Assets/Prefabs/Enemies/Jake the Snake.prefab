@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8312875387793954736}
   - component: {fileID: 4596497461170486685}
   - component: {fileID: -4096458041175946743}
+  - component: {fileID: 3675923787888925602}
   m_Layer: 8
   m_Name: Jake the Snake
   m_TagString: Untagged
@@ -220,9 +221,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfFlashes: 2
-  durationBetweenFlashes: 0.05
-  objectToFlash: {fileID: 1028024034505062335}
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Medium 1 Explosion
+--- !u!114 &3675923787888925602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028024034505062335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 1028024034505062335}

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 582664758982160749}
   - component: {fileID: 6182394580671815143}
   - component: {fileID: -5480676384923438696}
+  - component: {fileID: -7696524847270858832}
   m_Layer: 8
   m_Name: Speedy
   m_TagString: Untagged
@@ -192,9 +193,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfFlashes: 2
-  durationBetweenFlashes: 0.05
-  objectToFlash: {fileID: 247432967690536993}
   explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
     type: 3}
   explosionSfxName: Small Explosion
+--- !u!114 &-7696524847270858832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247432967690536993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 247432967690536993}

@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class PlayerDamageTaker : DamageTaker
 {
-    [SerializeField] int numberOfFlashes = 2;
-    [SerializeField] float durationBetweenFlashes = 0.05f;
-    [SerializeField] GameObject objectToFlash;
     [SerializeField] LevelLoader levelLoader;
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] string explosionSfxName = "Small Explosion";
 
-    private SpriteRenderer spriteRenderer;
-    private IEnumerator flashingCoroutine;
     private Health health;
     IFrames iframes;
     AudioManager audioManager;
+    SpriteFlasher spriteFlasher;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = objectToFlash.GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
         iframes = GetComponent<IFrames>();
         audioManager = AudioManager.instance;
+        spriteFlasher = GetComponent<SpriteFlasher>();
     }
 
     public override void TakeDamage(float damage)
@@ -56,30 +52,7 @@ public class PlayerDamageTaker : DamageTaker
     private void Damage()
     {
         audioManager.PlaySoundEffect("Damage Hit");
-
-        if (spriteRenderer)
-        {
-            if (flashingCoroutine != null)
-            {
-                StopCoroutine(flashingCoroutine);
-            }
-
-            flashingCoroutine = Flash();
-            StartCoroutine(flashingCoroutine);
-        }
-    }
-
-    private IEnumerator Flash()
-    {
-        bool makeSpriteWhite = true;
-
-        // Iterate twice the length of times - that way numberOfFlashes is "how many times is it turned on", not "how many times does it flip".
-        for (int i = 0; i < numberOfFlashes * 2; i++)
-        {
-            spriteRenderer.material.SetFloat("_FlashAmount", makeSpriteWhite ? 1f : 0f);
-            makeSpriteWhite = !makeSpriteWhite;
-            yield return new WaitForSeconds(durationBetweenFlashes);
-        }
+        spriteFlasher.Flash();
     }
 
     private IEnumerator Kill()
@@ -87,7 +60,7 @@ public class PlayerDamageTaker : DamageTaker
         // I couldn't simply call Destroy because apparently that also cancels
         // any coroutines running on that gameobject
         // So instead, I simply disable the sprite renderer for the player
-        spriteRenderer.enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<BulletEmitter>().enabled = false;
         Explode();

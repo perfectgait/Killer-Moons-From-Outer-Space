@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 6394831641894863844}
   - component: {fileID: 1833106023}
   - component: {fileID: 2143303532}
+  - component: {fileID: 3088117435633771413}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -270,10 +271,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828bdd9464b47440bb9e4e814f402fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfFlashes: 2
-  durationBetweenFlashes: 0.05
-  objectToFlash: {fileID: 610238544}
   levelLoader: {fileID: 0}
   explosionPrefab: {fileID: 4047538439607675957, guid: cfd929ac1637adb43ac1e154a05c9eb2,
     type: 3}
   explosionSfxName: Medium 2 Explosion
+--- !u!114 &3088117435633771413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716866169356230323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 610238544}

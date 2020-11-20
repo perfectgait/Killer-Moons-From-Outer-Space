@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 582664758982160749}
   - component: {fileID: 6182394580671815143}
   - component: {fileID: 686596157898703330}
+  - component: {fileID: -3224034839017281335}
   m_Layer: 8
   m_Name: Dirty Barry
   m_TagString: Untagged
@@ -218,9 +219,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfFlashes: 2
-  durationBetweenFlashes: 0.05
-  objectToFlash: {fileID: 247432967690536993}
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Medium 1 Explosion
+--- !u!114 &-3224034839017281335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247432967690536993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 247432967690536993}
