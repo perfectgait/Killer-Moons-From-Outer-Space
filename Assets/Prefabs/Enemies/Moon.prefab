@@ -113,7 +113,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1353497618}
   - component: {fileID: 1353497619}
-  - component: {fileID: 1353497620}
   m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
@@ -186,22 +185,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1353497620
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353497617}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 3.25, y: 0}
-  serializedVersion: 2
-  m_Radius: 4.91
 --- !u!1 &1393171780
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +231,7 @@ GameObject:
   - component: {fileID: 1132010496}
   - component: {fileID: 1132010497}
   - component: {fileID: 8933285020939277292}
+  - component: {fileID: 34238604}
   m_Layer: 11
   m_Name: Moon
   m_TagString: Untagged
@@ -357,3 +341,19 @@ MonoBehaviour:
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Small Explosion
+--- !u!58 &34238604
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198959610118144786}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.25, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.91
