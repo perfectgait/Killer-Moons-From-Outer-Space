@@ -44,8 +44,8 @@ public class EnemySpawner : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        //Sprite enemySprite = enemyPrefab.GetComponent<SpriteRenderer>().sprite;
-        //Gizmos.DrawIcon(transform.position, AssetDatabase.GetAssetPath(enemySprite), true);
+        Sprite enemySprite = enemyPrefab.GetComponentInChildren<SpriteRenderer>().sprite;
+        Gizmos.DrawIcon(transform.position, AssetDatabase.GetAssetPath(enemySprite), true);
     }
 #endif
 }
