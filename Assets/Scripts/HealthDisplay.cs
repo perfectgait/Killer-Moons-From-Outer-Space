@@ -5,37 +5,30 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    [SerializeField] GameObject objectWithHealth;
+    [SerializeField] string healthBarName;
 
+    private Health health;
     private Slider healthBar;
-    private Health objectHealth;
-    private bool hasNecessaryComponents = false;
+    private bool hasHealthBar = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (objectWithHealth == null)
+        health = GetComponent<Health>();
+        if (!string.IsNullOrEmpty(healthBarName))
         {
-            Debug.LogError("Health Bar needs a GameObject with a Health component to function properly");
-            return;
-        }
-        objectHealth = objectWithHealth.GetComponent<Health>();
-        if (objectHealth == null)
-        {
-            Debug.LogError("Health Bar needs a GameObject with a Health component to function properly");
-            return;
+            healthBar = GameObject.Find(healthBarName).GetComponent<Slider>();
+            hasHealthBar = true;
+            healthBar.maxValue = health.GetHealth();
         }
 
-        hasNecessaryComponents = true;
-        healthBar = GetComponent<Slider>();
-        healthBar.maxValue = objectHealth.GetHealth();
         UpdateDisplay();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hasNecessaryComponents)
+        if (hasHealthBar)
         {
             UpdateDisplay();
         }
@@ -43,6 +36,6 @@ public class HealthDisplay : MonoBehaviour
 
     private void UpdateDisplay()
     {
-        healthBar.value = objectHealth.GetHealth();
+        healthBar.value = health.GetHealth();
     }
 }
