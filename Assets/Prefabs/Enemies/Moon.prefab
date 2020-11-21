@@ -1099,6 +1099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  healthBar: {fileID: 3703887978713168442, guid: 61c77e71ada904b4aa3be21ee8f72343,
+    type: 3}
 --- !u!114 &8933285020939277292
 MonoBehaviour:
   m_ObjectHideFlags: 0

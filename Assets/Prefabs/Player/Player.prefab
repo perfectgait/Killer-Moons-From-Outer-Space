@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthBar: {fileID: 645106573672278978, guid: d0b69266d76a4be4ebf4d64ee159608d,
+    type: 3}
 --- !u!50 &6394831641894863844
 Rigidbody2D:
   serializedVersion: 4
