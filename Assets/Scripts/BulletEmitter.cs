@@ -44,7 +44,6 @@ public class BulletEmitter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -71,7 +70,7 @@ public class BulletEmitter : MonoBehaviour
         {
             for (var i = 1; i <= wavesPerPulse; i++)
             {
-                //audioManager.PlaySoundEffect(soundEffectName);
+                AudioManager.instance.PlaySoundEffect(soundEffectName);
 
                 int randomAngleVariance = Random.Range(-angleVariance, angleVariance);
                 float angle = startAngle + randomAngleVariance;
