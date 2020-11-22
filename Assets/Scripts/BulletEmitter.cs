@@ -39,7 +39,6 @@ public class BulletEmitter : MonoBehaviour
     [SerializeField] bool continousEmission = true;
 
     private Transform bulletOriginTransform;
-    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
