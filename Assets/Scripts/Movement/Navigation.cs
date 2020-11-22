@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointerEnterHandler
+public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointerEnterHandler, IPointerClickHandler
 {
     const string START_BUTTON = "Start Button";
     const string RESTART_BUTTON = "Restart Button";
@@ -51,7 +51,7 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointe
         menuCursorAnimator.SetTrigger("Explode");
         audioManager.PlaySoundEffect("Menu Select");
         yield return new WaitForSeconds(.3f);
-        Destroy(menuCursor);
+        menuCursor.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.3f);
 
         switch (gameObject.name)
@@ -78,5 +78,10 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointe
         {
             eventSystem.SetSelectedGameObject(gameObject);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        StartCoroutine(HandleSubmit());
     }
 }
