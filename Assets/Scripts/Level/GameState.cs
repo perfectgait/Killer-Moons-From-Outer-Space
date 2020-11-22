@@ -38,15 +38,15 @@ public class GameState : MonoBehaviour
 
         if (EnemiesHaveFinishedSpawning() && AllEnemiesAreDestroyed() && PlayerIsAlive())
         {
-            StartCoroutine(LoadWinScreenAfterWaitTime());
+            StartCoroutine(LoadNextSceneAfterWaitTime());
         }
     }
 
-    private IEnumerator LoadWinScreenAfterWaitTime()
+    private IEnumerator LoadNextSceneAfterWaitTime()
     {
         audioManager.StopCurrentlyPlayingMusic();
         yield return new WaitForSeconds(2f);
-        levelLoader.LoadWinScreen();
+        levelLoader.LoadNextLevelWithTransition();
     }
 
     private bool PlayerIsAlive()

@@ -3707,12 +3707,12 @@ PrefabInstance:
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
@@ -3722,32 +3722,32 @@ PrefabInstance:
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 17.7771
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 10.0028
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
@@ -3762,7 +3762,7 @@ PrefabInstance:
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177188680281, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
@@ -3813,16 +3813,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7325220177442097583, guid: f441a349be031a145a07b6ceed3aa28c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.6500001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7325220177594760045, guid: f441a349be031a145a07b6ceed3aa28c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.8200002
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177915662291, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
@@ -5626,6 +5616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263343300696480038, guid: e3e32edd87f7d6e42bdf5ff955d893a3,
+        type: 3}
+      propertyPath: musicToPlay
+      value: Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3e32edd87f7d6e42bdf5ff955d893a3, type: 3}
