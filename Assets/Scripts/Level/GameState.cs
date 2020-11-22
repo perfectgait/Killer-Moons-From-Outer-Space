@@ -10,6 +10,8 @@ public class GameState : MonoBehaviour
     Health playerHealth;
     EnemySpawner[] enemySpawners;
 
+    private bool nextSceneTriggered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,7 @@ public class GameState : MonoBehaviour
             return;
         }
 
-        if (EnemiesHaveFinishedSpawning() && AllEnemiesAreDestroyed() && PlayerIsAlive())
+        if (EnemiesHaveFinishedSpawning() && AllEnemiesAreDestroyed() && PlayerIsAlive() && !nextSceneTriggered)
         {
             StartCoroutine(LoadNextSceneAfterWaitTime());
         }
@@ -44,8 +46,16 @@ public class GameState : MonoBehaviour
 
     private IEnumerator LoadNextSceneAfterWaitTime()
     {
+        // Set this flag so that we don't keep triggering this corouting
+        nextSceneTriggered = true;
         audioManager.StopCurrentlyPlayingMusic();
-        yield return new WaitForSeconds(2f);
+
+        // Allow some silence to listen to an explosion
+        yield return new WaitForSeconds(1f);
+
+        // Play Victory theme and wait for it to finish
+        audioManager.PlayMusic("Victory");
+        yield return new WaitForSeconds(3.9f);
         levelLoader.LoadNextLevelWithTransition();
     }
 
