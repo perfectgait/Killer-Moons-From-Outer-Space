@@ -44,7 +44,10 @@ public class EnemyDamageTaker : DamageTaker
 
     private void Kill()
     {
-        Destroy(gameObject);
+        // Hack: Set delay on destroy so that the Update method in HealthDisplay has a chance to register
+        // the final health change before the gameObject is destroyed. Health should probably be updating HealthDisplay
+        // but this is fine for now because it is late.
+        Destroy(gameObject, .01f);
         Explode();
     }
 
