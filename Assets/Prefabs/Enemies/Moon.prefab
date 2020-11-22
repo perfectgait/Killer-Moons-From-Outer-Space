@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 943567183}
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
   m_LocalPosition: {x: -0.67, y: 2.07, z: 0}
-  m_LocalScale: {x: 1.7341, y: 1.7341, z: 1.7341}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1642534491}
   m_Father: {fileID: 7198959610118144784}
@@ -217,7 +217,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
     type: 3}
   bulletOriginPoint: {fileID: 1642534490}
-  soundEffectName: Longer Laser
+  soundEffectName: Cannon4
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
@@ -515,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 1455356982}
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
   m_LocalPosition: {x: -0.67, y: -2.05, z: 0}
-  m_LocalScale: {x: 1.7341, y: 1.7341, z: 1.7341}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1791769921}
   m_Father: {fileID: 7198959610118144784}
@@ -587,7 +587,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
     type: 3}
   bulletOriginPoint: {fileID: 1791769920}
-  soundEffectName: Longer Laser
+  soundEffectName: Cannon4
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
