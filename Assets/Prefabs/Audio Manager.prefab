@@ -112,12 +112,12 @@ MonoBehaviour:
   musicTracks:
   - name: Level 1
     audioClip: {fileID: 8300000, guid: c9e634f1bd06b424fbd901040c823cfc, type: 3}
-    volume: 0.6
+    volume: 0.4
     pitch: 1
     loop: 1
   - name: Level 2
     audioClip: {fileID: 8300000, guid: 4f1b95412a5349c4d8f6bfddcc910cfa, type: 3}
-    volume: 0.6
+    volume: 0.4
     pitch: 1
     loop: 1
   - name: Art Block
@@ -140,3 +140,8 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 1
+  - name: Victory
+    audioClip: {fileID: 8300000, guid: c0b2b24c689ee894bb50b84d5a66ea4a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
