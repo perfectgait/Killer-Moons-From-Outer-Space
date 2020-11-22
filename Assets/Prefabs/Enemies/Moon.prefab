@@ -113,11 +113,11 @@ GameObject:
   m_Component:
   - component: {fileID: 943567184}
   - component: {fileID: 943567185}
-  - component: {fileID: 1779036142}
   - component: {fileID: 1779036141}
   - component: {fileID: 1779036143}
+  - component: {fileID: 8878677}
   m_Layer: 8
-  m_Name: Gun2
+  m_Name: Cannon 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
   m_LocalPosition: {x: -0.67, y: 2.07, z: 0}
   m_LocalScale: {x: 1.7341, y: 1.7341, z: 1.7341}
-  m_Children: []
+  m_Children:
+  - {fileID: 1642534491}
   m_Father: {fileID: 7198959610118144784}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
@@ -188,18 +189,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1779036142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943567183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ee3cf53d5dd4b52a340c2b861dee3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1779036141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,9 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce322259284cfd54daa65f2569fe880c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5253408098806588500, guid: e3be3c62b3b6fbf48b1a0a9ed45b4971,
+  projectilePrefab: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
     type: 3}
-  bulletOriginPoint: {fileID: 0}
+  bulletOriginPoint: {fileID: 1642534490}
   soundEffectName: Longer Laser
   bulletSpeed: 8
   bulletCountPerWave: 3
@@ -238,6 +227,18 @@ MonoBehaviour:
   waitTimeBetweenBullets: 1
   waitTimeBetweenPulse: 3
   continousEmission: 1
+--- !u!114 &8878677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943567183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76f43ae39f5d48efb7866f1dc9a3e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1340338458
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,9 +498,9 @@ GameObject:
   - component: {fileID: 1455356984}
   - component: {fileID: 8391541113828099446}
   - component: {fileID: 1357852507}
-  - component: {fileID: 2314824731933861529}
+  - component: {fileID: 482458310}
   m_Layer: 8
-  m_Name: Gun1
+  m_Name: Cannon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +516,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
   m_LocalPosition: {x: -0.67, y: -2.05, z: 0}
   m_LocalScale: {x: 1.7341, y: 1.7341, z: 1.7341}
-  m_Children: []
+  m_Children:
+  - {fileID: 1791769921}
   m_Father: {fileID: 7198959610118144784}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15}
@@ -582,15 +584,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce322259284cfd54daa65f2569fe880c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5253408098806588500, guid: e3be3c62b3b6fbf48b1a0a9ed45b4971,
+  projectilePrefab: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
     type: 3}
-  bulletOriginPoint: {fileID: 0}
+  bulletOriginPoint: {fileID: 1791769920}
   soundEffectName: Longer Laser
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
-  startAngle: 300
-  endAngle: 260
+  startAngle: 310
+  endAngle: 270
   angleVariance: 0
   waitTimeBetweenBullets: 1
   waitTimeBetweenPulse: 3
@@ -608,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
---- !u!114 &2314824731933861529
+--- !u!114 &482458310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -617,7 +619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1455356982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ee3cf53d5dd4b52a340c2b861dee3d, type: 3}
+  m_Script: {fileID: 11500000, guid: e76f43ae39f5d48efb7866f1dc9a3e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1516868127
@@ -701,6 +703,66 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1642534490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642534491}
+  m_Layer: 8
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642534491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642534490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 943567184}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791769920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791769921}
+  m_Layer: 8
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791769921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791769920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1455356983}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988191734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a6fa8dc9ff0dc42be3e68c3f9aad1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moonCannons:
+  - {fileID: 482458310}
+  - {fileID: 8878677}
+  delayUntilFightStarts: 1
+  delayUntilFiringStarts: 10
 --- !u!114 &1132010496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,7 +1545,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7198959610118144786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a44e55c9b1874f440908f71c0e0d7722, type: 2}
   m_CullingMode: 0

@@ -19,12 +19,6 @@ public class MoonBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //pathMovement = GetComponent<PathMovement>();
-        //StartCoroutine(SlowMovement());
-
-        //audioManager = AudioManager.instance;
-        //StartCoroutine(PlayBossAudio());
-
         countdownUntilFightStarts = delayUntilFightStarts;
         countdownUntilFiring = delayUntilFiringStarts;
     }

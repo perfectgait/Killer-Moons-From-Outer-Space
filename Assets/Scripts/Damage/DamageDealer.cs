@@ -14,7 +14,5 @@ public class DamageDealer : MonoBehaviour
         {
             damageTaker.TakeDamage(damage);
         }
-
-        Destroy(gameObject);
     }
 }
