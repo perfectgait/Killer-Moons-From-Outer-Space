@@ -116,6 +116,10 @@ GameObject:
   - component: {fileID: 1779036141}
   - component: {fileID: 1779036143}
   - component: {fileID: 8878677}
+  - component: {fileID: 8878682}
+  - component: {fileID: 8878678}
+  - component: {fileID: 8878679}
+  - component: {fileID: 8878680}
   m_Layer: 8
   m_Name: Cannon 2
   m_TagString: Untagged
@@ -157,7 +161,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89e38d2aaccfd004eac4f17c573d22cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,8 +179,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1993898921
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 724ade15e681f444795e70f9b0d75adc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -239,6 +243,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76f43ae39f5d48efb7866f1dc9a3e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &8878682
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943567183}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000023841858, y: 0.00000011920929}
+  serializedVersion: 2
+  m_Radius: 0.125
+--- !u!114 &8878678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943567183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
+--- !u!114 &8878679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943567183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
+    type: 3}
+  explosionSfxName: Small Explosion
+--- !u!114 &8878680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943567183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 943567183}
 --- !u!1 &1340338458
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +562,10 @@ GameObject:
   - component: {fileID: 8391541113828099446}
   - component: {fileID: 1357852507}
   - component: {fileID: 482458310}
+  - component: {fileID: 482458315}
+  - component: {fileID: 482458311}
+  - component: {fileID: 482458312}
+  - component: {fileID: 8240488026138243014}
   m_Layer: 8
   m_Name: Cannon 1
   m_TagString: Untagged
@@ -540,7 +607,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89e38d2aaccfd004eac4f17c573d22cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -558,8 +625,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1993898921
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 724ade15e681f444795e70f9b0d75adc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -622,6 +689,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76f43ae39f5d48efb7866f1dc9a3e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &482458315
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455356982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000023841858, y: -0.00000011920929}
+  serializedVersion: 2
+  m_Radius: 0.125
+--- !u!114 &482458311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455356982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
+--- !u!114 &482458312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455356982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
+    type: 3}
+  explosionSfxName: Small Explosion
+--- !u!114 &8240488026138243014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455356982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 1455356982}
 --- !u!1 &1516868127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1515,7 @@ GameObject:
   - component: {fileID: -4508928650610088480}
   - component: {fileID: 196794244}
   - component: {fileID: 525352991}
+  - component: {fileID: 549028774}
   m_Layer: 8
   m_Name: Moon
   m_TagString: Untagged
@@ -1513,7 +1640,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7198959610118144786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1569,6 +1696,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarName: Moon Boss Health Bar
+--- !u!60 &549028774
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198959610118144786}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.31088448, y: 3.9262094}
+      - {x: -0.7440605, y: 2.9054897}
+      - {x: 0.33178043, y: 1.0836675}
+      - {x: 0.3297944, y: -1.1364943}
+      - {x: 0.32510418, y: -1.081855}
+      - {x: -0.8419437, y: -2.7292366}
+      - {x: 0.16511631, y: -3.9115214}
+      - {x: 1.7491604, y: -4.731018}
+      - {x: 1.6915693, y: 4.6595325}
 --- !u!1 &7778665126265594999
 GameObject:
   m_ObjectHideFlags: 0

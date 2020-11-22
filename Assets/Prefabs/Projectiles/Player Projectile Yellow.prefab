@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7081184246480237061}
   - component: {fileID: -4387890437135310852}
   - component: {fileID: 2097946597}
-  - component: {fileID: 2097946598}
   - component: {fileID: 1020710241}
+  - component: {fileID: 7286522238237144873}
   m_Layer: 7
   m_Name: Player Projectile Yellow
   m_TagString: Untagged
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -928412045
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7574183298559016815, guid: 978299b37236943849616e2f602884cf,
     type: 3}
@@ -144,20 +144,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2097946598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6890917514262629253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2048293e2fa0c464498aa88993ec02cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 1, y: 0}
-  speed: 15
 --- !u!114 &1020710241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +157,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
+--- !u!114 &7286522238237144873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6890917514262629253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1dc1e04869e4b5f8f94906430d4f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 1, y: 0}
+  speed: 15

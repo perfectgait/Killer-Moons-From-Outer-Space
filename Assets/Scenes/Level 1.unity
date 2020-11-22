@@ -124,6 +124,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8878676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 943567183, guid: 13b02d0060f475141b76111dd28703cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7198959610915086771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8878678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
+--- !u!114 &8878679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6379378157694969873, guid: 1179c27e15a47ad44861ba41902916a3,
+    type: 3}
+  explosionSfxName: Small Explosion
+--- !u!114 &8878680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a8bf5eedec2845af95e8b043bbaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfFlashes: 2
+  durationBetweenFlashes: 0.05
+  objectToFlash: {fileID: 8878676}
+--- !u!58 &8878682
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878676}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000023841858, y: 0.00000011920929}
+  serializedVersion: 2
+  m_Radius: 0.125
 --- !u!1001 &28939645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3026,30 +3091,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 943567184, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 943567184, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 943567184, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455356983, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455356983, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455356983, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7198959610118144784, guid: 13b02d0060f475141b76111dd28703cb,
         type: 3}
       propertyPath: m_RootOrder

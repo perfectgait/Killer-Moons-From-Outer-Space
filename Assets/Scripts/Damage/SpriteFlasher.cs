@@ -28,6 +28,8 @@ public class SpriteFlasher : MonoBehaviour
     {
         if (spriteRenderer)
         {
+            Debug.Log("Flash");
+
             if (flashingCoroutine != null)
             {
                 StopCoroutine(flashingCoroutine);
