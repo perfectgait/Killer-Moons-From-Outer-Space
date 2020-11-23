@@ -5,7 +5,6 @@ Shader "Sprites/Diffuse Flash"
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         _SelfIllum("Self Illumination",Range(0.0,1.0)) = 0.0
         _FlashAmount("Flash Amount",Range(0.0,1.0)) = 0.0
-        _Color("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
     }
 
@@ -31,7 +30,6 @@ Shader "Sprites/Diffuse Flash"
         #pragma multi_compile DUMMY PIXELSNAP_ON
 
         sampler2D _MainTex;
-        fixed4 _Color;
         float _FlashAmount,_SelfIllum;
 
         struct Input
@@ -48,7 +46,7 @@ Shader "Sprites/Diffuse Flash"
             v.normal = float3(0,0,-1);
 
             UNITY_INITIALIZE_OUTPUT(Input, o);
-            o.color = _Color;
+            o.color = v.color;
         }
 
         void surf(Input IN, inout SurfaceOutput o)
