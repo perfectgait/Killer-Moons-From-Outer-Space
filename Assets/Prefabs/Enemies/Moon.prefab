@@ -185,9 +185,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23596326, y: -0.04103695}
+  m_Offset: {x: -0.25292587, y: -0.04103695}
   serializedVersion: 2
-  m_Radius: 0.12054344
+  m_Radius: 0.17143174
 --- !u!114 &5110451859903589025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,71 +232,6 @@ MonoBehaviour:
   numberOfFlashes: 2
   durationBetweenFlashes: 0.05
   objectToFlash: {fileID: 1661309237}
---- !u!1 &371531329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 371531330}
-  - component: {fileID: 371531331}
-  m_Layer: 12
-  m_Name: Invisible Wall
-  m_TagString: Wall
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &371531330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371531329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7198959610118144784}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &371531331
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371531329}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.51591396, y: 5.7646112}
-      - {x: -0.18357277, y: 4.099846}
-      - {x: -1.3069086, y: 2.2700408}
-      - {x: -1.9525352, y: 0.035886377}
-      - {x: -1.2110729, y: -2.602687}
-      - {x: -0.29271078, y: -3.9259503}
-      - {x: 0.5350848, y: -6.0288467}
-      - {x: 2.863874, y: -6.0288467}
-      - {x: 2.9540148, y: 5.77163}
 --- !u!1 &832227054
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,9 +438,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23596326, y: -0.04103695}
+  m_Offset: {x: -0.25292587, y: -0.04103695}
   serializedVersion: 2
-  m_Radius: 0.12054344
+  m_Radius: 0.17143174
 --- !u!114 &873446944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1982,9 +1917,8 @@ GameObject:
   - component: {fileID: 8933285020939277292}
   - component: {fileID: 34238604}
   - component: {fileID: -4508928650610088480}
-  - component: {fileID: 196794244}
   - component: {fileID: 525352991}
-  - component: {fileID: 549028774}
+  - component: {fileID: 1428282034}
   m_Layer: 8
   m_Name: Moon
   m_TagString: Untagged
@@ -2013,7 +1947,6 @@ Transform:
   - {fileID: 943567184}
   - {fileID: 190088040}
   - {fileID: 873446941}
-  - {fileID: 371531330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2024,7 +1957,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7198959610118144786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e48bfdd8e0f74d4b84e92fd7c20243d, type: 3}
   m_Name: 
@@ -2115,15 +2048,15 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7198959610118144786}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.25, y: 0}
+  m_Offset: {x: 3.1296449, y: 0}
   serializedVersion: 2
-  m_Radius: 4.91
+  m_Radius: 5.030355
 --- !u!114 &-4508928650610088480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,25 +2072,6 @@ MonoBehaviour:
   numberOfFlashes: 2
   durationBetweenFlashes: 0.05
   objectToFlash: {fileID: 1353497617}
---- !u!95 &196794244
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7198959610118144786}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a44e55c9b1874f440908f71c0e0d7722, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &525352991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,40 +2085,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarName: Moon Boss Health Bar
---- !u!60 &549028774
-PolygonCollider2D:
+--- !u!50 &1428282034
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7198959610118144786}
-  m_Enabled: 0
-  m_Density: 1
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.31088448, y: 3.9262094}
-      - {x: -0.7440605, y: 2.9054897}
-      - {x: 0.33178043, y: 1.0836675}
-      - {x: 0.3297944, y: -1.1364943}
-      - {x: 0.32510418, y: -1.081855}
-      - {x: -0.8419437, y: -2.7292366}
-      - {x: 0.16511631, y: -3.9115214}
-      - {x: 1.7491604, y: -4.731018}
-      - {x: 1.6915693, y: 4.6595325}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7778665126265594999
 GameObject:
   m_ObjectHideFlags: 0
