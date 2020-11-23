@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     private float canFireCountdown = 0.0f;
     // Offset is used so a human can fire at the same rate as the computer if they chose to rapid press the fire button vs. hold it down
     private float waitTimeBetweenBulletsOffset = 0.2f;
+    private bool canMove = true;
+    private bool hitWall = false;
+    private Vector3 lastKnownGoodPosition;
+    private Vector3 originalPosition;
 
     // Just used for testing the pacing of the levels
     [SerializeField] bool startWithMinigun = false;
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour
         SetupMovementBoundaries();
         bulletEmitter = GetComponent<BulletEmitter>();
         health = GetComponent<Health>();
+        originalPosition = transform.position;
 
         if (startWithMinigun)
         {
@@ -61,12 +66,26 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+        // If the player hit a wall, move them back to the last known good
+        // position and remove the hit wall flag so they can move again.
+        if (hitWall)
+        {
+            Debug.Log("Resetting after hitting wall");
+
+            //transform.position = lastKnownGoodPosition;
+            transform.position = originalPosition;
+            hitWall = false;
+
+            return;
+        }
+
         float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * horizontalMovementSpeed;
         float deltaY = Input.GetAxis("Vertical") * Time.deltaTime * verticalMovementSpeed;
         float newXPosition = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         float newYPosition = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
 
         transform.position = new Vector3(newXPosition, newYPosition, transform.position.z);
+        lastKnownGoodPosition = transform.position;
     }
 
     private void Fire()
@@ -166,4 +185,32 @@ public class Player : MonoBehaviour
 
         return 1.0f;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            hitWall = true;
+            //transform.position = lastKnownGoodPosition;
+
+            Debug.Log("hit wall");
+
+            //canMove = false;
+        }
+    }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Wall")
+    //    {
+    //        Debug.Log("stayed in wall");
+
+    //        canMove = false;
+    //    }
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    canMove = true;
+    //}
 }
