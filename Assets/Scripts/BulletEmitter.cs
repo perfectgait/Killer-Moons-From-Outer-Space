@@ -83,7 +83,7 @@ public class BulletEmitter : MonoBehaviour
                     Vector3 moveVector = new Vector3(dirX, dirY, 0f);
                     Vector3 bulVector = (moveVector - bulletOriginTransform.position).normalized;
 
-                    var projectile = Instantiate(projectilePrefab, bulletOriginTransform.position, Quaternion.identity);
+                    var projectile = Instantiate(projectilePrefab, bulletOriginTransform.position, bulletOriginTransform.rotation);
                     projectile.GetComponent<Projectile>().SetVelocity(bulletSpeed, bulVector);
                     angle += angleStep;
                 }
