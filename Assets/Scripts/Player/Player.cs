@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float horizontalMovementSpeed = 7.0f;
     [SerializeField] float verticalMovementSpeed = 7.0f;
+    // Just used for testing the pacing of the levels
+    [SerializeField] bool startWithMinigun = false;
 
     private Coroutine firingCoroutine;
     private BulletEmitter bulletEmitter;
@@ -16,9 +18,6 @@ public class Player : MonoBehaviour
     // Offset is used so a human can fire at the same rate as the computer if they chose to rapid press the fire button vs. hold it down
     private float waitTimeBetweenBulletsOffset = 0.2f;
     private Rigidbody2D rigidBody;
-
-    // Just used for testing the pacing of the levels
-    [SerializeField] bool startWithMinigun = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,9 +43,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalMovementSpeed, Input.GetAxis("Vertical") * verticalMovementSpeed);
-
-        rigidBody.velocity = newVelocity;
+        rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalMovementSpeed, Input.GetAxis("Vertical") * verticalMovementSpeed); ;
     }
 
     private void Fire()
