@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDamageTaker : DamageTaker
 {
+    [SerializeField] int score = 0;
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] string explosionSfxName = "Small Explosion";
 
@@ -44,6 +45,8 @@ public class EnemyDamageTaker : DamageTaker
 
     private void Kill()
     {
+        GameScore.instance.IncrementBy(score);
+
         // Hack: Set delay on destroy so that the Update method in HealthDisplay has a chance to register
         // the final health change before the gameObject is destroyed. Health should probably be updating HealthDisplay
         // but this is fine for now because it is late.

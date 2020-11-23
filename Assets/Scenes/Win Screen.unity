@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 498236529}
   - component: {fileID: 498236528}
   m_Layer: 5
-  m_Name: Lose Text
+  m_Name: Win Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,14 +643,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: As the Moon gasped its last breath, you were still in awe of what you just
-    witnessed. A solar system nearly wiped out by ancient beings gone mad. None of
-    that matters any longer. You've saved the human race -- and possibly all other
-    species for that matter. You can rest easy knowing the universe is safe once
-    again...
+  m_text: <font-weight=100>As the Moon gasped its last breath, you were still in
+    awe of what you just witnessed. A solar system nearly wiped out by ancient beings
+    gone mad. None of that matters any longer. You've saved the human race -- and
+    possibly all other species for that matter. You can rest easy knowing the universe
+    is safe once again...</font-weight>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75773836618e7494a844fcf9db484cc7, type: 2}
-  m_sharedMaterial: {fileID: -2752450536657927868, guid: 75773836618e7494a844fcf9db484cc7,
+  m_fontAsset: {fileID: 11400000, guid: 600669ea8a2a41845a36cfd4a8a31343, type: 2}
+  m_sharedMaterial: {fileID: -5305541545623716176, guid: 600669ea8a2a41845a36cfd4a8a31343,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -725,6 +725,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169305680}
   m_CullTransparentMesh: 1
+--- !u!1001 &1340820956
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7050350516216305272, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_Name
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050350516216305274, guid: 9d0cca758b17c0149b925ac514dc0e49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d0cca758b17c0149b925ac514dc0e49, type: 3}
 --- !u!1 &1482453992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,9 +1365,8 @@ MonoBehaviour:
 
     Rusty Bailey'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75773836618e7494a844fcf9db484cc7, type: 2}
-  m_sharedMaterial: {fileID: -2752450536657927868, guid: 75773836618e7494a844fcf9db484cc7,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1322,8 +1390,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
