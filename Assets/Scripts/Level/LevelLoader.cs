@@ -68,7 +68,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Level 1");
     }
 
     public void LoadLoseScreen()

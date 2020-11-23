@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointerEnterHandler, IPointerClickHandler
 {
     const string START_BUTTON = "Start Button";
+    const string CONTINUE_BUTTON = "Continue Button";
     const string RESTART_BUTTON = "Restart Button";
     const string MAIN_MENU_BUTTON = "Main Menu Button";
     const string QUIT_BUTTON = "Quit Button";
@@ -57,6 +58,10 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointe
         switch (gameObject.name)
         {
             case START_BUTTON:
+            case CONTINUE_BUTTON:
+                GameScore.instance.Reset();
+                levelLoader.LoadNextLevelWithTransition();
+                break;
             case RESTART_BUTTON:
                 GameScore.instance.Reset();
                 levelLoader.LoadFirstLevel();
