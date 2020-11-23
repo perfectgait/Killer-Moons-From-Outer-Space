@@ -2719,6 +2719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon Light Cannon Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 1032438189292129898, guid: 3e84802d03d6f4762934f2316a8af185,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1032438189292129901, guid: 3e84802d03d6f4762934f2316a8af185,
         type: 3}
       propertyPath: m_RootOrder
@@ -3385,6 +3390,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Moon Heavy Cannon Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8213348464468616055, guid: e36303d7f0dbb4bf8b1032c30559e79a,
         type: 3}
