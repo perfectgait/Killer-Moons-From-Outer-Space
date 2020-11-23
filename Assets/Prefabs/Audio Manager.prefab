@@ -120,6 +120,11 @@ MonoBehaviour:
     volume: 0.4
     pitch: 1
     loop: 1
+  - name: Level 3
+    audioClip: {fileID: 8300000, guid: 69dfb6a14b6fdc5459e78f6431291998, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
   - name: Art Block
     audioClip: {fileID: 8300000, guid: 52871ab4e87f871449199808bb55d1fb, type: 3}
     volume: 0.8
