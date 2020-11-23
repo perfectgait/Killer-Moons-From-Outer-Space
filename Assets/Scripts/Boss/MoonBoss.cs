@@ -80,7 +80,10 @@ public class MoonBoss : MonoBehaviour
 
             foreach (MoonCannon moonCannon in moonCannons)
             {
-                moonCannon.StartFiring();
+                if (moonCannon)
+                {
+                    moonCannon.StartFiring();
+                }
             }
         }
     }
