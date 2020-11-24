@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalMovementSpeed: 7
   verticalMovementSpeed: 7
-  startWithMinigun: 0
+  startWithMinigun: 1
 --- !u!114 &1976622210
 MonoBehaviour:
   m_ObjectHideFlags: 0
