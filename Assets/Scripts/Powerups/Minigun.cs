@@ -44,7 +44,6 @@ public class Minigun : Powerup
                 player.SetCanFire(CanFire());
 
                 emitter.SetWaitTimeBetweenBullets(waitTimeBetweenBullets);
-                emitter.SetBulletSfx("Fast Laser");
                 emitter.SetAngleVariance(GetAngleVariance());
             }
         }
