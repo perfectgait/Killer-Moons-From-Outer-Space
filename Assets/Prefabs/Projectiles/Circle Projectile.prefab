@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2896208942431686736}
   - component: {fileID: 4582647344260397672}
   m_Layer: 9
-  m_Name: Circle Projectile 2
+  m_Name: Circle Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1993898921
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8494234830403434051, guid: 9f80781a832f27d449239f609b6c98d1,
+  m_Sprite: {fileID: 8896028820342903397, guid: 9f80781a832f27d449239f609b6c98d1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
