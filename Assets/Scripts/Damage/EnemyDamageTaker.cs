@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class EnemyDamageTaker : DamageTaker
 {
+    [SerializeField] GameObject objectToDamage;
+    [SerializeField] GameObject objectToFlash;
     [SerializeField] int score = 0;
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] string explosionSfxName = "Small Explosion";
+    [SerializeField] float damageMultiplier = 1.0f;
 
-    private Health health;
-    AudioManager audioManager;
-    SpriteFlasher spriteFlasher;
+    protected Health health;
+    protected SpriteFlasher spriteFlasher;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = GetComponent<Health>();
+        objectToDamage = objectToDamage != null ? objectToDamage : gameObject;
+        objectToFlash = objectToFlash != null ? objectToFlash : gameObject;
+
+        health = objectToDamage.GetComponent<Health>();
         audioManager = AudioManager.instance;
-        spriteFlasher = GetComponent<SpriteFlasher>();
+        spriteFlasher = objectToFlash.GetComponent<SpriteFlasher>();
     }
 
     public override void TakeDamage(float damage)
     {
         if (health)
         {
-            health.Damage(damage);
+            health.Damage(damage * damageMultiplier);
         }
 
         if (health.GetHealth() > 0)
@@ -50,7 +56,7 @@ public class EnemyDamageTaker : DamageTaker
         // Hack: Set delay on destroy so that the Update method in HealthDisplay has a chance to register
         // the final health change before the gameObject is destroyed. Health should probably be updating HealthDisplay
         // but this is fine for now because it is late.
-        Destroy(gameObject, .01f);
+        Destroy(objectToDamage, .01f);
         Explode();
     }
 
@@ -59,7 +65,7 @@ public class EnemyDamageTaker : DamageTaker
         if (explosionPrefab)
         {
             audioManager.PlaySoundEffect(explosionSfxName);
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+            GameObject explosion = Instantiate(explosionPrefab, objectToDamage.transform.position, objectToDamage.transform.rotation);
             Destroy(explosion, 1f);
         }
     }
