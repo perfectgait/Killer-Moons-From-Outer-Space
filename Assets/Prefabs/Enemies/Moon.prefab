@@ -721,7 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToDamage: {fileID: 7198959610118144786}
   objectToFlash: {fileID: 1353497617}
-  score: 0
+  score: 1000
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Small Explosion
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToDamage: {fileID: 7198959610118144786}
   objectToFlash: {fileID: 1393171780}
-  score: 0
+  score: 1000
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
   explosionSfxName: Small Explosion
