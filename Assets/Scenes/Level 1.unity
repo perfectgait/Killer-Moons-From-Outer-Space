@@ -2944,7 +2944,7 @@ PrefabInstance:
     - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
       propertyPath: soundEffects.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
@@ -2953,7 +2953,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
+      propertyPath: soundEffects.Array.data[14].name
+      value: Bling
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
       propertyPath: soundEffects.Array.data[13].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[14].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
@@ -2963,9 +2973,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
+      propertyPath: soundEffects.Array.data[14].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
       propertyPath: soundEffects.Array.data[13].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: fb9d591f718f5f34899c274124dc94bd, type: 3}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[14].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 476b883959d14f144956181629e8d238, type: 3}
     - target: {fileID: 2103529381942585749, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
       propertyPath: m_RootOrder
@@ -3342,10 +3362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 448689804, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7198959610118144784, guid: 13b02d0060f475141b76111dd28703cb,
         type: 3}
       propertyPath: m_RootOrder

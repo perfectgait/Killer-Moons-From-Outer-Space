@@ -9,6 +9,7 @@ public class MoonBoss : MonoBehaviour
     [SerializeField] GameObject invulnerabilityShield;
     [SerializeField] float delayUntilFightStarts = 5.0f;
     [SerializeField] float delayUntilFiringStarts = 10.0f;
+    [SerializeField] MoonSatellite[] moonSatellites;
 
     private float countdownUntilFightStarts = 0.0f;
     private bool fightStarted = false;
@@ -23,6 +24,7 @@ public class MoonBoss : MonoBehaviour
     {
         countdownUntilFightStarts = delayUntilFightStarts;
         countdownUntilFiring = delayUntilFiringStarts;
+        DisableSatellites();
     }
 
     // Update is called once per frame
@@ -50,10 +52,18 @@ public class MoonBoss : MonoBehaviour
             fightStarted = true;
 
             pathMovement = GetComponent<PathMovement>();
-            StartCoroutine(SlowMovement());
+
+            if (pathMovement)
+            {
+                StartCoroutine(SlowMovement());
+            }
 
             audioManager = AudioManager.instance;
-            StartCoroutine(PlayBossAudio());
+
+            if (audioManager)
+            {
+                StartCoroutine(PlayBossAudio());
+            }
         }
     }
 
@@ -93,6 +103,16 @@ public class MoonBoss : MonoBehaviour
                     moonCannon.StartFiring();
                 }
             }
+
+            EnableSatellites();
+
+            foreach (MoonSatellite moonSatellite in moonSatellites)
+            {
+                if (moonSatellite)
+                {
+                    StartCoroutine(moonSatellite.Attack());
+                }
+            }
         }
     }
 
@@ -101,6 +121,30 @@ public class MoonBoss : MonoBehaviour
         if (!shieldLowered && countdownUntilFiring <= 0)
         {
             invulnerabilityShield.SetActive(false);
+        }
+    }
+
+    private void DisableSatellites()
+    {
+        foreach (MoonSatellite moonSatellite in moonSatellites)
+        {
+            if (moonSatellite)
+            {
+                moonSatellite.GetComponent<SpriteRenderer>().enabled = false;
+                moonSatellite.GetComponent<Collider2D>().enabled = false;
+            }
+        }
+    }
+
+    private void EnableSatellites()
+    {
+        foreach (MoonSatellite moonSatellite in moonSatellites)
+        {
+            if (moonSatellite)
+            {
+                moonSatellite.GetComponent<SpriteRenderer>().enabled = true;
+                moonSatellite.GetComponent<Collider2D>().enabled = true;
+            }
         }
     }
 }
