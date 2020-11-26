@@ -12,12 +12,14 @@ public class MoonDamageTaker : DamageTaker
 
     private Health health;
     private AudioManager audioManager;
+    private MoonBoss moon;
 
     // Start is called before the first frame update
     void Start()
     {
         health = GetComponent<Health>();
         audioManager = AudioManager.instance;
+        moon = GetComponent<MoonBoss>();
     }
 
     public override void TakeDamage(float damage)
@@ -33,11 +35,35 @@ public class MoonDamageTaker : DamageTaker
         }
     }
 
-    private void Kill()
+    public override void Kill()
     {
         GameScore.instance.IncrementBy(score);
 
         StartCoroutine(Explode());
+        KillCannons();
+    }
+
+    private void KillCannons()
+    {
+        if (!moon)
+        {
+            return;
+        }
+
+        MoonCannon[] moonCannons = moon.GetMoonCannons();
+
+        foreach (MoonCannon moonCannon in moonCannons)
+        {
+            if (moonCannon)
+            {
+                DamageTaker moonCannonDamageTaker = moonCannon.GetComponent<DamageTaker>();
+
+                if (moonCannonDamageTaker)
+                {
+                    moonCannonDamageTaker.Kill();
+                }
+            }
+        }
     }
 
     private IEnumerator Explode()

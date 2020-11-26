@@ -5,6 +5,8 @@ using UnityEngine;
 public class MoonEyeDamageTaker : DamageTaker
 {
     [SerializeField] MoonBoss moon;
+    [SerializeField] float angleChangeDuringDeathSpin = 20f;
+    [SerializeField] float timeToWaitBetweenAngleChangeDuringDeathSpin = 0.01f;
 
     private MoonDamageTaker moonDamageTaker;
     private SpriteFlasher spriteFlasher;
@@ -27,9 +29,46 @@ public class MoonEyeDamageTaker : DamageTaker
         }
     }
 
+    public override void Kill()
+    {
+        // Stop the eye from attacking
+        GetComponent<BulletEmitter>().StopAllCoroutines();
+        // Make the eye stop following the player so the spin works
+        GetComponent<MoonEye>().StopFollowingPlayer();
+        StartCoroutine(DeathSpin());
+    }
+
+    private IEnumerator DeathSpin()
+    {
+        float currentAngle = gameObject.transform.rotation.z;
+
+        // Just keep spinning since the moon will destroy itself along with all
+        // of its child game objects.
+        while (true)
+        {
+            currentAngle += angleChangeDuringDeathSpin;
+
+            if (currentAngle > 360)
+            {
+                currentAngle = 0;
+            }
+
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle);
+
+            yield return new WaitForSeconds(timeToWaitBetweenAngleChangeDuringDeathSpin);
+        }
+    }
+
     private void Damage()
     {
-        audioManager.PlaySoundEffect("Damage Hit");
-        spriteFlasher.Flash();
+        if (audioManager)
+        {
+            audioManager.PlaySoundEffect("Damage Hit");
+        }
+
+        if (spriteFlasher)
+        {
+            spriteFlasher.Flash();
+        }
     }
 }

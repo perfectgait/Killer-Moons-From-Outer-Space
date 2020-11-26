@@ -38,6 +38,11 @@ public class MoonBoss : MonoBehaviour
         LowerShield();
     }
 
+    public MoonCannon[] GetMoonCannons()
+    {
+        return moonCannons;
+    }
+
     private void StartFight()
     {
         if (!fightStarted && countdownUntilFightStarts <= 0)

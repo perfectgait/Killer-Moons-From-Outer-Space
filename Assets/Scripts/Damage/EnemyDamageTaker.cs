@@ -44,11 +44,18 @@ public class EnemyDamageTaker : DamageTaker
 
     private void Damage()
     {
-        audioManager.PlaySoundEffect("Damage Hit");
-        spriteFlasher.Flash();
+        if (audioManager)
+        {
+            audioManager.PlaySoundEffect("Damage Hit");
+        }
+
+        if (spriteFlasher)
+        {
+            spriteFlasher.Flash();
+        }
     }
 
-    private void Kill()
+    public override void Kill()
     {
         GameScore.instance.IncrementBy(score);
 
@@ -63,7 +70,11 @@ public class EnemyDamageTaker : DamageTaker
     {
         if (explosionPrefab)
         {
-            audioManager.PlaySoundEffect(explosionSfxName);
+            if (audioManager)
+            {
+                audioManager.PlaySoundEffect(explosionSfxName);
+            }
+
             GameObject explosion = Instantiate(explosionPrefab, objectToDamage.transform.position, objectToDamage.transform.rotation);
             Destroy(explosion, 1f);
         }

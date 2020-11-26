@@ -45,17 +45,30 @@ public class PlayerDamageTaker : DamageTaker
         }
         else
         {
-            StartCoroutine(Kill());
+            Kill();
         }
+    }
+
+    public override void Kill()
+    {
+        StartCoroutine(KillPlayer())
+;
     }
 
     private void Damage()
     {
-        audioManager.PlaySoundEffect("Damage Hit");
-        spriteFlasher.Flash();
+        if (audioManager)
+        {
+            audioManager.PlaySoundEffect("Damage Hit");
+        }
+
+        if (spriteFlasher)
+        {
+            spriteFlasher.Flash();
+        }
     }
 
-    private IEnumerator Kill()
+    private IEnumerator KillPlayer()
     {
         // I couldn't simply call Destroy because apparently that also cancels
         // any coroutines running on that gameobject
@@ -66,7 +79,11 @@ public class PlayerDamageTaker : DamageTaker
         Explode();
 
         // Playing game over music before the scene loads so that the ambient sounds can play first
-        audioManager.PlayMusic("Game Over");
+        if (audioManager)
+        {
+            audioManager.PlayMusic("Game Over");
+        }
+
         yield return new WaitForSeconds(3.9f);
 
         levelLoader.LoadLoseScreen();

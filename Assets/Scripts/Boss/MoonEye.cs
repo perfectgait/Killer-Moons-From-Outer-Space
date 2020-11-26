@@ -5,20 +5,27 @@ using UnityEngine;
 public class MoonEye : MonoBehaviour
 {
     private Player player;
+    private bool shouldFollowPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
+        shouldFollowPlayer = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player)
+        if (shouldFollowPlayer && player)
         {
             FollowPlayer();
         }
+    }
+
+    public void StopFollowingPlayer()
+    {
+        shouldFollowPlayer = false;
     }
 
     private void FollowPlayer()

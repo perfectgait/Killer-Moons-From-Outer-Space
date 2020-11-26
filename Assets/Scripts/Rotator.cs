@@ -34,6 +34,6 @@ public class Rotator : MonoBehaviour
             direction *= -1;
         }
 
-        gameObject.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y, currentAngle); //currentAngle;
+        gameObject.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y, currentAngle);
     }
 }
