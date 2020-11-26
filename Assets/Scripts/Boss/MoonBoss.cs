@@ -6,6 +6,7 @@ using UnityEngine;
 public class MoonBoss : MonoBehaviour
 {
     [SerializeField] MoonCannon[] moonCannons;
+    [SerializeField] GameObject invulnerabilityShield;
     [SerializeField] float delayUntilFightStarts = 5.0f;
     [SerializeField] float delayUntilFiringStarts = 10.0f;
 
@@ -13,6 +14,7 @@ public class MoonBoss : MonoBehaviour
     private bool fightStarted = false;
     private float countdownUntilFiring = 0.0f;
     private bool firingStarted = false;
+    private bool shieldLowered;
     private PathMovement pathMovement;
     private AudioManager audioManager;
 
@@ -33,6 +35,7 @@ public class MoonBoss : MonoBehaviour
 
         StartFight();
         StartFiring();
+        LowerShield();
     }
 
     private void StartFight()
@@ -85,6 +88,14 @@ public class MoonBoss : MonoBehaviour
                     moonCannon.StartFiring();
                 }
             }
+        }
+    }
+
+    private void LowerShield()
+    {
+        if (!shieldLowered && countdownUntilFiring <= 0)
+        {
+            invulnerabilityShield.SetActive(false);
         }
     }
 }

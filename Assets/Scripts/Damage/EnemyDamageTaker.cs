@@ -9,7 +9,6 @@ public class EnemyDamageTaker : DamageTaker
     [SerializeField] int score = 0;
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] string explosionSfxName = "Small Explosion";
-    [SerializeField] float damageMultiplier = 1.0f;
 
     protected Health health;
     protected SpriteFlasher spriteFlasher;
@@ -30,7 +29,7 @@ public class EnemyDamageTaker : DamageTaker
     {
         if (health)
         {
-            health.Damage(damage * damageMultiplier);
+            health.Damage(damage);
         }
 
         if (health.GetHealth() > 0)

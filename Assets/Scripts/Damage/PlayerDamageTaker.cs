@@ -61,7 +61,7 @@ public class PlayerDamageTaker : DamageTaker
         // any coroutines running on that gameobject
         // So instead, I simply disable the sprite renderer for the player
         GetComponentInChildren<SpriteRenderer>().enabled = false;
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         GetComponent<BulletEmitter>().enabled = false;
         Explode();
 

@@ -54,3 +54,6 @@ TagManager:
   - name: Explosion
     uniqueID: 2476165425
     locked: 0
+  - name: Enemy Projectile
+    uniqueID: 2455288739
+    locked: 0

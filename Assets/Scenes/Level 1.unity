@@ -2781,6 +2781,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e84802d03d6f4762934f2316a8af185, type: 3}
+--- !u!1001 &1844062017664054266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919276, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919278, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Moon Eye Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844062019103919278, guid: fc65077e7f14a4d239373cad5c0aa3bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc65077e7f14a4d239373cad5c0aa3bd, type: 3}
 --- !u!1001 &2103529381314643440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2793,6 +2867,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[13].name
+      value: Cannon3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[13].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[13].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[13].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fb9d591f718f5f34899c274124dc94bd, type: 3}
     - target: {fileID: 2103529381942585749, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
       propertyPath: m_RootOrder
