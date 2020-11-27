@@ -87,8 +87,9 @@ public class MoonBoss : MonoBehaviour
         // Start the satellite attack
         if (satelliteCoordinator)
         {
-            satelliteCoordinator.EnableSatellites();
+            //satelliteCoordinator.EnableSatellites();
             satelliteCoordinator.InitializeSatellites();
+            satelliteCoordinator.EnableSatellites();
             StartCoroutine(satelliteCoordinator.Attack());
         }
     }
