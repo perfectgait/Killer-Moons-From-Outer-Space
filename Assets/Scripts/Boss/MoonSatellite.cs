@@ -14,7 +14,6 @@ public class MoonSatellite : MonoBehaviour
     [SerializeField] Gradient indicatorLineToDestinationGradient;
     [SerializeField] Gradient indicatorLineToOriginGradient;
     [SerializeField] string sfxName = "Bling";
-    [SerializeField] float delayBetweenAttacks = 6.0f;
 
     private Vector2 origin;
     private Vector2 destination;
@@ -34,52 +33,52 @@ public class MoonSatellite : MonoBehaviour
 
     public IEnumerator Attack()
     {
-        Coroutine indicatorLineCoroutine;
+        //Coroutine indicatorLineCoroutine;
 
-        do
+        //do
+        //{
+        // Display path indicators
+        indicatorLineRenderer.colorGradient = indicatorLineToDestinationGradient;
+        Coroutine indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
+
+        yield return new WaitForSeconds(timeToDisplayIndicatorLine);
+
+        // Hide path indicators
+        StopCoroutine(indicatorLineCoroutine);
+        indicatorLineRenderer.enabled = false;
+
+        audioManager.PlaySoundEffect(sfxName);
+
+        while (!HasReachedTarget(destination))
         {
-            // Display path indicators
-            indicatorLineRenderer.colorGradient = indicatorLineToDestinationGradient;
-            indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
+            transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
 
-            yield return new WaitForSeconds(timeToDisplayIndicatorLine);
+            yield return null;
+        }
 
-            // Hide path indicators
-            StopCoroutine(indicatorLineCoroutine);
-            indicatorLineRenderer.enabled = false;
+        yield return new WaitForSeconds(delayUntilGoingBackToOrigin);
 
-            audioManager.PlaySoundEffect(sfxName);
+        // Display path indicators
+        indicatorLineRenderer.colorGradient = indicatorLineToOriginGradient;
+        indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
 
-            while (!HasReachedTarget(destination))
-            {
-                transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+        yield return new WaitForSeconds(timeToDisplayIndicatorLine);
 
-                yield return null;
-            }
+        // Hide path indicators
+        StopCoroutine(indicatorLineCoroutine);
+        indicatorLineRenderer.enabled = false;
 
-            yield return new WaitForSeconds(delayUntilGoingBackToOrigin);
+        audioManager.PlaySoundEffect(sfxName);
 
-            // Display path indicators
-            indicatorLineRenderer.colorGradient = indicatorLineToOriginGradient;
-            indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
+        while (!HasReachedTarget(origin))
+        {
+            transform.position = Vector2.MoveTowards(transform.position, origin, moveSpeed * Time.deltaTime);
 
-            yield return new WaitForSeconds(timeToDisplayIndicatorLine);
+            yield return null;
+        }
 
-            // Hide path indicators
-            StopCoroutine(indicatorLineCoroutine);
-            indicatorLineRenderer.enabled = false;
-
-            audioManager.PlaySoundEffect(sfxName);
-
-            while (!HasReachedTarget(origin))
-            {
-                transform.position = Vector2.MoveTowards(transform.position, origin, moveSpeed * Time.deltaTime);
-
-                yield return null;
-            }
-
-            yield return new WaitForSeconds(delayBetweenAttacks);
-        } while (true);
+        //yield return new WaitForSeconds(delayBetweenAttacks);
+        //} while (true);
     }
 
     private bool HasReachedTarget(Vector2 target)

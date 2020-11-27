@@ -252,7 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828bdd9464b47440bb9e4e814f402fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoader: {fileID: 0}
+  levelLoader: {fileID: 7219818988705677956, guid: 07e216809cc47cb4db6eb2a449823ade,
+    type: 3}
   explosionPrefab: {fileID: 4047538439607675957, guid: cfd929ac1637adb43ac1e154a05c9eb2,
     type: 3}
   explosionSfxName: Medium 2 Explosion

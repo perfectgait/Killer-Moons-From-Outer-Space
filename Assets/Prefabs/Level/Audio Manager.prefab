@@ -109,6 +109,16 @@ MonoBehaviour:
     volume: 0.648
     pitch: 1
     loop: 0
+  - name: Cannon3
+    audioClip: {fileID: 8300000, guid: fb9d591f718f5f34899c274124dc94bd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Bling
+    audioClip: {fileID: 8300000, guid: 476b883959d14f144956181629e8d238, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   musicTracks:
   - name: Level 1
     audioClip: {fileID: 8300000, guid: c9e634f1bd06b424fbd901040c823cfc, type: 3}
