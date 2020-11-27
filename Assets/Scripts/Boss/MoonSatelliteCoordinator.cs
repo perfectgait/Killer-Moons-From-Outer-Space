@@ -31,6 +31,17 @@ public class MoonSatelliteCoordinator : MonoBehaviour
         }
     }
 
+    public void InitializeSatellites()
+    {
+        foreach (MoonSatellite moonSatellite in moonSatellites)
+        {
+            if (moonSatellite)
+            {
+                moonSatellite.Initialize();
+            }
+        }
+    }
+
     public IEnumerator Attack()
     {
         while (true)

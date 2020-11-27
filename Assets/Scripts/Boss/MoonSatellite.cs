@@ -19,16 +19,27 @@ public class MoonSatellite : MonoBehaviour
     private Vector2 destination;
     private LineRenderer indicatorLineRenderer;
     private AudioManager audioManager;
+    private bool initialized = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        origin = transform.position;
-        destination = destinationGameObject.transform.position;
         audioManager = AudioManager.instance;
 
-        CreateIndicatorLineRenderer();
         StartCoroutine(Rotate());
+    }
+
+    public void Initialize()
+    {
+        if (initialized)
+        {
+            return;
+        }
+
+        origin = transform.position;
+        destination = destinationGameObject.transform.position;
+        CreateIndicatorLineRenderer();
+        initialized = true;
     }
 
     public IEnumerator Attack()
