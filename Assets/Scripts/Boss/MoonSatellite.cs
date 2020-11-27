@@ -33,10 +33,6 @@ public class MoonSatellite : MonoBehaviour
 
     public IEnumerator Attack()
     {
-        //Coroutine indicatorLineCoroutine;
-
-        //do
-        //{
         // Display path indicators
         indicatorLineRenderer.colorGradient = indicatorLineToDestinationGradient;
         Coroutine indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
@@ -76,9 +72,6 @@ public class MoonSatellite : MonoBehaviour
 
             yield return null;
         }
-
-        //yield return new WaitForSeconds(delayBetweenAttacks);
-        //} while (true);
     }
 
     private bool HasReachedTarget(Vector2 target)

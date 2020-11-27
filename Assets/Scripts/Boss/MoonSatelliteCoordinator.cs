@@ -7,18 +7,6 @@ public class MoonSatelliteCoordinator : MonoBehaviour
     [SerializeField] MoonSatellite[] moonSatellites;
     [SerializeField] float delayBetweenAttacks = 20.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void DisableSatellites()
     {
         foreach (MoonSatellite moonSatellite in moonSatellites)
