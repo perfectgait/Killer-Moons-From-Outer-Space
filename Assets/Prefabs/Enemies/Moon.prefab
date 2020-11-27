@@ -1355,7 +1355,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.67, y: 2.07, z: 0}
   m_LocalScale: {x: 2.75, y: 2.75, z: 2.75}
-  m_Children: []
+  m_Children:
+  - {fileID: 1829174495}
   m_Father: {fileID: 7198959610118144784}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1424,13 +1425,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
     type: 3}
-  bulletOriginPoint: {fileID: 0}
+  bulletOriginPoint: {fileID: 1829174494}
   soundEffectName: Cannon4
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
-  startAngle: 285
-  endAngle: 240
+  startAngle: 255
+  endAngle: 285
   angleVariance: 0
   waitTimeBetweenBullets: 1
   waitTimeBetweenPulse: 3
@@ -1925,6 +1926,36 @@ Transform:
   m_Father: {fileID: 16502522}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1413279185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413279186}
+  m_Layer: 8
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1413279186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413279185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1455356983}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455356982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +1989,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.67, y: -2.05, z: 0}
   m_LocalScale: {x: 2.75, y: 2.75, z: 2.75}
-  m_Children: []
+  m_Children:
+  - {fileID: 1413279186}
   m_Father: {fileID: 7198959610118144784}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2027,13 +2059,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8213348464468616054, guid: e36303d7f0dbb4bf8b1032c30559e79a,
     type: 3}
-  bulletOriginPoint: {fileID: 0}
+  bulletOriginPoint: {fileID: 1413279185}
   soundEffectName: Cannon4
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
-  startAngle: 300
-  endAngle: 255
+  startAngle: 255
+  endAngle: 285
   angleVariance: 0
   waitTimeBetweenBullets: 1
   waitTimeBetweenPulse: 3
@@ -2430,6 +2462,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1501859196}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1829174494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829174495}
+  m_Layer: 8
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1829174495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829174494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 943567184}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959139035
 GameObject:
