@@ -205,7 +205,7 @@ MonoBehaviour:
   startAngle: 270
   endAngle: 270
   angleVariance: 0
-  waitTimeBetweenBullets: 0.4
+  waitTimeBetweenBullets: 0.5
   waitTimeBetweenPulse: 1.5
   continousEmission: 1
 --- !u!114 &190088043
@@ -426,14 +426,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationGameObject: {fileID: 685629707}
   moveSpeed: 7
-  delayUntilGoingBackToOrigin: 5
-  timeToDisplayIndicatorLine: 8
+  delayUntilGoingBackToOrigin: 4
+  timeToDisplayIndicatorLine: 5
   initialTimeBetweenIndicatorLineFlashes: 1
   rotationAnglePerFrame: -1.5
   indicatorLineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   indicatorLineToDestinationGradient:
     serializedVersion: 2
-    key0: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.7058824}
+    key0: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.27450982}
     key1: {r: 0.8666667, g: 0.14509805, b: 0.14509805, a: 0}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
@@ -449,7 +449,7 @@ MonoBehaviour:
     ctime5: 65535
     ctime6: 0
     ctime7: 0
-    atime0: 0
+    atime0: 193
     atime1: 65535
     atime2: 0
     atime3: 0
@@ -463,7 +463,7 @@ MonoBehaviour:
   indicatorLineToOriginGradient:
     serializedVersion: 2
     key0: {r: 0.8666667, g: 0.14509805, b: 0.14509805, a: 0}
-    key1: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.7058824}
+    key1: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.27450982}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
     key4: {r: 1, g: 1, b: 1, a: 0}
@@ -490,6 +490,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   sfxName: Bling
+  delayBetweenAttacks: 6
 --- !u!58 &147833468
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -505,7 +506,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.26666668
+  m_Radius: 0.375
 --- !u!114 &147833469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685629707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: -3, z: 0}
+  m_LocalPosition: {x: -2.64, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 16502522}
@@ -709,14 +710,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationGameObject: {fileID: 1399196596}
   moveSpeed: 7
-  delayUntilGoingBackToOrigin: 5
-  timeToDisplayIndicatorLine: 8
+  delayUntilGoingBackToOrigin: 4
+  timeToDisplayIndicatorLine: 5
   initialTimeBetweenIndicatorLineFlashes: 1
   rotationAnglePerFrame: -1.5
   indicatorLineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   indicatorLineToDestinationGradient:
     serializedVersion: 2
-    key0: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.7058824}
+    key0: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.27450982}
     key1: {r: 0.8666667, g: 0.14509805, b: 0.14509805, a: 0}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
@@ -732,7 +733,7 @@ MonoBehaviour:
     ctime5: 65535
     ctime6: 0
     ctime7: 0
-    atime0: 0
+    atime0: 193
     atime1: 65535
     atime2: 0
     atime3: 0
@@ -746,7 +747,7 @@ MonoBehaviour:
   indicatorLineToOriginGradient:
     serializedVersion: 2
     key0: {r: 0.8666667, g: 0.14509805, b: 0.14509805, a: 0}
-    key1: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.7058824}
+    key1: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.27450982}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
     key4: {r: 1, g: 1, b: 1, a: 0}
@@ -773,6 +774,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   sfxName: Bling
+  delayBetweenAttacks: 6
 --- !u!58 &699174906
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -788,7 +790,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.26666668
+  m_Radius: 0.375
 --- !u!114 &699174905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707802525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18, y: 0, z: 0}
+  m_LocalPosition: {x: -18.34, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1749880007}
@@ -902,14 +904,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationGameObject: {fileID: 1403267485}
   moveSpeed: 7
-  delayUntilGoingBackToOrigin: 5
-  timeToDisplayIndicatorLine: 8
+  delayUntilGoingBackToOrigin: 4
+  timeToDisplayIndicatorLine: 5
   initialTimeBetweenIndicatorLineFlashes: 1
   rotationAnglePerFrame: 1.5
   indicatorLineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   indicatorLineToDestinationGradient:
     serializedVersion: 2
-    key0: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.7058824}
+    key0: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.27450982}
     key1: {r: 0.8666667, g: 0.14509805, b: 0.14509805, a: 0}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
@@ -925,7 +927,7 @@ MonoBehaviour:
     ctime5: 65535
     ctime6: 0
     ctime7: 0
-    atime0: 0
+    atime0: 193
     atime1: 65535
     atime2: 0
     atime3: 0
@@ -939,7 +941,7 @@ MonoBehaviour:
   indicatorLineToOriginGradient:
     serializedVersion: 2
     key0: {r: 0.8666667, g: 0.14509805, b: 0.14509805, a: 0}
-    key1: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.7058824}
+    key1: {r: 0.86666673, g: 0.14509805, b: 0.14509805, a: 0.27450982}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
     key4: {r: 1, g: 1, b: 1, a: 0}
@@ -966,6 +968,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   sfxName: Bling
+  delayBetweenAttacks: 6
 --- !u!58 &707802528
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -981,7 +984,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.26666668
+  m_Radius: 0.375
 --- !u!114 &707802527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,7 +1119,7 @@ MonoBehaviour:
   startAngle: 270
   endAngle: 270
   angleVariance: 0
-  waitTimeBetweenBullets: 0.4
+  waitTimeBetweenBullets: 0.5
   waitTimeBetweenPulse: 1.5
   continousEmission: 1
 --- !u!114 &873446947
@@ -1745,7 +1748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399196596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: 3, z: 0}
+  m_LocalPosition: {x: -2.64, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 16502522}

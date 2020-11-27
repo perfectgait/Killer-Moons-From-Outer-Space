@@ -14,6 +14,7 @@ public class MoonSatellite : MonoBehaviour
     [SerializeField] Gradient indicatorLineToDestinationGradient;
     [SerializeField] Gradient indicatorLineToOriginGradient;
     [SerializeField] string sfxName = "Bling";
+    [SerializeField] float delayBetweenAttacks = 6.0f;
 
     private Vector2 origin;
     private Vector2 destination;
@@ -33,50 +34,57 @@ public class MoonSatellite : MonoBehaviour
 
     public IEnumerator Attack()
     {
-        // Display path indicators
-        indicatorLineRenderer.colorGradient = indicatorLineToDestinationGradient;
-        Coroutine indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
+        Coroutine indicatorLineCoroutine;
 
-        yield return new WaitForSeconds(timeToDisplayIndicatorLine);
-
-        // Hide path indicators
-        StopCoroutine(indicatorLineCoroutine);
-        indicatorLineRenderer.enabled = false;
-
-        audioManager.PlaySoundEffect(sfxName);
-
-        while (!HasReachedTarget(destination))
+        do
         {
-            transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+            // Display path indicators
+            indicatorLineRenderer.colorGradient = indicatorLineToDestinationGradient;
+            indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
 
-            yield return null;
-        }
+            yield return new WaitForSeconds(timeToDisplayIndicatorLine);
 
-        yield return new WaitForSeconds(delayUntilGoingBackToOrigin);
+            // Hide path indicators
+            StopCoroutine(indicatorLineCoroutine);
+            indicatorLineRenderer.enabled = false;
 
-        // Display path indicators
-        indicatorLineRenderer.colorGradient = indicatorLineToOriginGradient;
-        indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
+            audioManager.PlaySoundEffect(sfxName);
 
-        yield return new WaitForSeconds(timeToDisplayIndicatorLine);
+            while (!HasReachedTarget(destination))
+            {
+                transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
 
-        // Hide path indicators
-        StopCoroutine(indicatorLineCoroutine);
-        indicatorLineRenderer.enabled = false;
+                yield return null;
+            }
 
-        audioManager.PlaySoundEffect(sfxName);
+            yield return new WaitForSeconds(delayUntilGoingBackToOrigin);
 
-        while (!HasReachedTarget(origin))
-        {
-            transform.position = Vector2.MoveTowards(transform.position, origin, moveSpeed * Time.deltaTime);
+            // Display path indicators
+            indicatorLineRenderer.colorGradient = indicatorLineToOriginGradient;
+            indicatorLineCoroutine = StartCoroutine(ShowIndicatorLine());
 
-            yield return null;
-        }
+            yield return new WaitForSeconds(timeToDisplayIndicatorLine);
+
+            // Hide path indicators
+            StopCoroutine(indicatorLineCoroutine);
+            indicatorLineRenderer.enabled = false;
+
+            audioManager.PlaySoundEffect(sfxName);
+
+            while (!HasReachedTarget(origin))
+            {
+                transform.position = Vector2.MoveTowards(transform.position, origin, moveSpeed * Time.deltaTime);
+
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(delayBetweenAttacks);
+        } while (true);
     }
 
     private bool HasReachedTarget(Vector2 target)
     {
-        return Vector2.Distance(transform.position, target) <= Mathf.Epsilon;
+        return Vector2.Distance(transform.position, target) <= 0.1f;
     }
 
     private void CreateIndicatorLineRenderer()
@@ -101,7 +109,7 @@ public class MoonSatellite : MonoBehaviour
         {
             indicatorLineRenderer.enabled = !indicatorLineRenderer.enabled;
             // Slowly flash faster and faster
-            timeBetweenIndicatorLineFlashes -= 0.07f;
+            timeBetweenIndicatorLineFlashes -= 0.1f;
             timeBetweenIndicatorLineFlashes = Mathf.Max(timeBetweenIndicatorLineFlashes, 0.07f);
 
             yield return new WaitForSeconds(timeBetweenIndicatorLineFlashes);
