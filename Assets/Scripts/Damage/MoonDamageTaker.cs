@@ -13,6 +13,7 @@ public class MoonDamageTaker : DamageTaker
     private Health health;
     private AudioManager audioManager;
     private MoonBoss moon;
+    private bool isDying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,18 @@ public class MoonDamageTaker : DamageTaker
         moon = GetComponent<MoonBoss>();
     }
 
+    public bool IsDying()
+    {
+        return isDying;
+    }
+
     public override void TakeDamage(float damage)
     {
+        if (isDying)
+        {
+            return;
+        }
+
         if (health)
         {
             health.Damage(damage);
@@ -31,6 +42,7 @@ public class MoonDamageTaker : DamageTaker
 
         if (health.GetHealth() <= 0)
         {
+            isDying = true;
             Kill();
         }
     }

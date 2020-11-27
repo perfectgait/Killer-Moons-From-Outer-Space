@@ -22,7 +22,7 @@ public class MoonEyeDamageTaker : DamageTaker
 
     public override void TakeDamage(float damage)
     {
-        if (moonDamageTaker)
+        if (moonDamageTaker && !moonDamageTaker.IsDying())
         {
             moonDamageTaker.TakeDamage(damage);
             Damage();
@@ -32,7 +32,7 @@ public class MoonEyeDamageTaker : DamageTaker
     public override void Kill()
     {
         // Stop the eye from attacking
-        GetComponent<BulletEmitter>().StopAllCoroutines();
+        GetComponent<MoonCannon>().StopFiring();
         // Make the eye stop following the player so the spin works
         GetComponent<MoonEye>().StopFollowingPlayer();
         StartCoroutine(DeathSpin());

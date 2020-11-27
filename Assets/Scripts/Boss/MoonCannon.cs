@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class MoonCannon : MonoBehaviour
 {
-    public void StartFiring()
+    private IEnumerator coroutine;
+
+    // Start is called before the first frame update
+    void Start()
     {
         BulletEmitter bulletEmitter = GetComponent<BulletEmitter>();
 
         if (bulletEmitter)
         {
-            StartCoroutine(bulletEmitter.Emit());
+            coroutine = bulletEmitter.Emit();
+        }
+    }
+
+    public void StartFiring()
+    {
+        if (coroutine != null)
+        {
+            StartCoroutine(coroutine);
+        }
+    }
+
+    public void StopFiring()
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
         }
     }
 }

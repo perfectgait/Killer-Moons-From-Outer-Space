@@ -42,7 +42,7 @@ public class MoonBoss : MonoBehaviour
         countdownUntilFiring = Mathf.Max(0, countdownUntilFiring);
 
         StartFight();
-        StartFiring();
+        StartAttacking();
         LowerShield();
     }
 
@@ -96,7 +96,7 @@ public class MoonBoss : MonoBehaviour
         }
     }
 
-    private void StartFiring()
+    private void StartAttacking()
     {
         if (!firingStarted && countdownUntilFiring <= 0)
         {
