@@ -24,6 +24,11 @@ public class SpriteFlasher : MonoBehaviour
 
     }
 
+    public float GetFlashDuration()
+    {
+        return numberOfFlashes * durationBetweenFlashes;
+    }
+
     public void Flash()
     {
         if (spriteRenderer)

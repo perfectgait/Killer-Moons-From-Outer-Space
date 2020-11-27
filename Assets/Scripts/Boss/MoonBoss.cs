@@ -8,14 +8,10 @@ public class MoonBoss : MonoBehaviour
     [SerializeField] MoonCannon[] moonCannons;
     [SerializeField] GameObject invulnerabilityShield;
     [SerializeField] float delayUntilFightStarts = 5.0f;
-    [SerializeField] float delayUntilFiringStarts = 10.0f;
+    [SerializeField] float delayUntilShieldStartsLowering = 2.0f;
+    [SerializeField] float delayUntilAttackStartsAfterShieldIslowered = 1.0f;
     [SerializeField] MoonSatellite[] moonSatellites;
 
-    private float countdownUntilFightStarts = 0.0f;
-    private bool fightStarted = false;
-    private float countdownUntilFiring = 0.0f;
-    private bool firingStarted = false;
-    private bool shieldLowered;
     private PathMovement pathMovement;
     private AudioManager audioManager;
     private MoonSatelliteCoordinator satelliteCoordinator;
@@ -23,27 +19,16 @@ public class MoonBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countdownUntilFightStarts = delayUntilFightStarts;
-        countdownUntilFiring = delayUntilFiringStarts;
         satelliteCoordinator = GetComponent<MoonSatelliteCoordinator>();
+        audioManager = AudioManager.instance;
 
-        if (satelliteCoordinator)
-        {
-            satelliteCoordinator.DisableSatellites();
-        }
+        StartCoroutine(StartFight());
     }
 
     // Update is called once per frame
     void Update()
     {
-        countdownUntilFightStarts -= Time.deltaTime;
-        countdownUntilFightStarts = Mathf.Max(0, countdownUntilFightStarts);
-        countdownUntilFiring -= Time.deltaTime;
-        countdownUntilFiring = Mathf.Max(0, countdownUntilFiring);
 
-        StartFight();
-        StartAttacking();
-        LowerShield();
     }
 
     public MoonCannon[] GetMoonCannons()
@@ -51,25 +36,59 @@ public class MoonBoss : MonoBehaviour
         return moonCannons;
     }
 
-    private void StartFight()
+    private IEnumerator StartFight()
     {
-        if (!fightStarted && countdownUntilFightStarts <= 0)
+        // Disable satellites until the moon is in position
+        if (satelliteCoordinator)
         {
-            fightStarted = true;
+            satelliteCoordinator.DisableSatellites();
+        }
 
-            pathMovement = GetComponent<PathMovement>();
+        yield return new WaitForSeconds(delayUntilFightStarts);
 
-            if (pathMovement)
+        pathMovement = GetComponent<PathMovement>();
+
+        // Start the music coroutine
+        StartCoroutine(PlayBossAudio());
+
+        // Move the moon into position
+        if (pathMovement)
+        {
+            while (!pathMovement.finishedMoving)
             {
-                StartCoroutine(SlowMovement());
+                yield return new WaitForSeconds(.5f);
+                pathMovement.movementSpeed *= .92f;
             }
+        }
 
-            audioManager = AudioManager.instance;
+        yield return new WaitForSeconds(delayUntilShieldStartsLowering);
 
-            if (audioManager)
+        // Flash then lower the shield
+        SpriteFlasher spriteFlasher = invulnerabilityShield.GetComponent<SpriteFlasher>();
+
+        spriteFlasher.Flash();
+
+        // Wait for the flashing to stop
+        yield return new WaitForSeconds(spriteFlasher.GetFlashDuration());
+
+        invulnerabilityShield.SetActive(false);
+
+        yield return new WaitForSeconds(delayUntilAttackStartsAfterShieldIslowered);
+
+        // Start firing all cannons
+        foreach (MoonCannon moonCannon in moonCannons)
+        {
+            if (moonCannon)
             {
-                StartCoroutine(PlayBossAudio());
+                moonCannon.StartFiring();
             }
+        }
+
+        // Start the satellite attack
+        if (satelliteCoordinator)
+        {
+            satelliteCoordinator.EnableSatellites();
+            StartCoroutine(satelliteCoordinator.Attack());
         }
     }
 
@@ -84,45 +103,5 @@ public class MoonBoss : MonoBehaviour
         }
 
         audioManager.PlayMusic("Boss Battle");
-    }
-
-
-    private IEnumerator SlowMovement()
-    {
-        while (!pathMovement.finishedMoving)
-        {
-            yield return new WaitForSeconds(.5f);
-            pathMovement.movementSpeed *= .92f;
-        }
-    }
-
-    private void StartAttacking()
-    {
-        if (!firingStarted && countdownUntilFiring <= 0)
-        {
-            firingStarted = true;
-
-            foreach (MoonCannon moonCannon in moonCannons)
-            {
-                if (moonCannon)
-                {
-                    moonCannon.StartFiring();
-                }
-            }
-
-            if (satelliteCoordinator)
-            {
-                satelliteCoordinator.EnableSatellites();
-                StartCoroutine(satelliteCoordinator.Attack());
-            }
-        }
-    }
-
-    private void LowerShield()
-    {
-        if (!shieldLowered && countdownUntilFiring <= 0)
-        {
-            invulnerabilityShield.SetActive(false);
-        }
     }
 }
