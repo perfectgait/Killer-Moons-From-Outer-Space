@@ -9,13 +9,6 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    SceneHistory sceneHistory;
-
-    private void Start()
-    {
-        sceneHistory = SceneHistory.instance;
-    }
-
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,12 +20,12 @@ public class LevelLoader : MonoBehaviour
     public void LoadPreviousScene()
     {
         AddCurrentSceneToHistory();
-        SceneManager.LoadScene(sceneHistory.GetPrevious());
+        SceneManager.LoadScene(SceneHistory.instance.GetPrevious());
     }
 
     public void LoadMainMenu()
     {
-        sceneHistory.Reset();
+        SceneHistory.instance.Reset();
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -91,6 +84,6 @@ public class LevelLoader : MonoBehaviour
 
     private void AddCurrentSceneToHistory()
     {
-        sceneHistory.Add(SceneManager.GetActiveScene().name);
+        SceneHistory.instance.Add(SceneManager.GetActiveScene().name);
     }
 }
