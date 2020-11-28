@@ -16,6 +16,6 @@ public class ScoreDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmpText.text = GameScore.instance.GetTotal().ToString("00000000");
+        tmpText.text = GameScore.instance.GetTotal().ToString("000000");
     }
 }
