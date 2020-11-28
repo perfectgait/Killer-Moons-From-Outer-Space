@@ -15,12 +15,14 @@ public class MoonBoss : MonoBehaviour
     private PathMovement pathMovement;
     private AudioManager audioManager;
     private MoonSatelliteCoordinator satelliteCoordinator;
+    private IEnumerator attackCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         satelliteCoordinator = GetComponent<MoonSatelliteCoordinator>();
         audioManager = AudioManager.instance;
+        attackCoroutine = Attack();
 
         StartCoroutine(StartFight());
     }
@@ -34,6 +36,11 @@ public class MoonBoss : MonoBehaviour
     public MoonCannon[] GetMoonCannons()
     {
         return moonCannons;
+    }
+
+    public void StopAttacking()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator StartFight()
@@ -75,23 +82,12 @@ public class MoonBoss : MonoBehaviour
 
         yield return new WaitForSeconds(delayUntilAttackStartsAfterShieldIslowered);
 
-        // Start firing all cannons
-        foreach (MoonCannon moonCannon in moonCannons)
-        {
-            if (moonCannon)
-            {
-                moonCannon.StartFiring();
-            }
-        }
-
-        // Start the satellite attack
         if (satelliteCoordinator)
         {
-            //satelliteCoordinator.EnableSatellites();
             satelliteCoordinator.InitializeSatellites();
-            satelliteCoordinator.EnableSatellites();
-            StartCoroutine(satelliteCoordinator.Attack());
         }
+
+        StartCoroutine(attackCoroutine);
     }
 
     private IEnumerator PlayBossAudio()
@@ -105,5 +101,31 @@ public class MoonBoss : MonoBehaviour
         }
 
         audioManager.PlayMusic("Boss Battle");
+    }
+
+    private IEnumerator Attack()
+    {
+        while (true)
+        {
+            foreach (MoonCannon moonCannon in moonCannons)
+            {
+                if (moonCannon)
+                {
+                    moonCannon.StartFiring();
+                }
+            }
+
+            // Start the satellite attack
+            if (satelliteCoordinator)
+            {
+                //satelliteCoordinator.InitializeSatellites();
+                satelliteCoordinator.EnableSatellites();
+                //StartCoroutine(satelliteCoordinator.Attack());
+                satelliteCoordinator.Attack();
+            }
+
+            // @TODO Have a coroutine for the satellites and one for the cannons so each can fire at different intervals
+            yield return new WaitForSeconds(15.0f);
+        }
     }
 }

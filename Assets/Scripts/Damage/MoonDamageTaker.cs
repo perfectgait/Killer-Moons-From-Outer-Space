@@ -51,6 +51,7 @@ public class MoonDamageTaker : DamageTaker
     {
         GameScore.instance.IncrementBy(score);
 
+        moon.StopAttacking();
         StartCoroutine(Explode());
         KillCannons();
     }

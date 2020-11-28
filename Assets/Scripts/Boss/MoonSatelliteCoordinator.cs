@@ -42,19 +42,19 @@ public class MoonSatelliteCoordinator : MonoBehaviour
         }
     }
 
-    public IEnumerator Attack()
+    public void Attack()
     {
-        while (true)
+        //while (true)
+        //{
+        foreach (MoonSatellite moonSatellite in moonSatellites)
         {
-            foreach (MoonSatellite moonSatellite in moonSatellites)
+            if (moonSatellite)
             {
-                if (moonSatellite)
-                {
-                    StartCoroutine(moonSatellite.Attack());
-                }
+                StartCoroutine(moonSatellite.Attack());
             }
-
-            yield return new WaitForSeconds(delayBetweenAttacks);
         }
+
+        //    yield return new WaitForSeconds(delayBetweenAttacks);
+        //}
     }
 }

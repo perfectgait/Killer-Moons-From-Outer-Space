@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7325220177188680285, guid: f441a349be031a145a07b6ceed3aa28c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7325220177915662291, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1258,6 +1263,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 190088042, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
+      propertyPath: continousEmission
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873446948, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
+      propertyPath: continousEmission
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779036143, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
+      propertyPath: continousEmission
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7198959610118144784, guid: 13b02d0060f475141b76111dd28703cb,
         type: 3}
       propertyPath: m_RootOrder
@@ -1317,6 +1334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391541113828099446, guid: 13b02d0060f475141b76111dd28703cb,
+        type: 3}
+      propertyPath: continousEmission
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b02d0060f475141b76111dd28703cb, type: 3}
