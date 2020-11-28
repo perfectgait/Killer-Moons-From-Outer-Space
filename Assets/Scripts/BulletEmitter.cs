@@ -73,18 +73,16 @@ public class BulletEmitter : MonoBehaviour
 
                 int randomAngleVariance = Random.Range(-angleVariance, angleVariance);
                 float angle = startAngle + randomAngleVariance;
-                float angleStep = ((endAngle + randomAngleVariance) - angle) / bulletCountPerWave - 1;
-
+                float angleStep = ((endAngle + randomAngleVariance) - angle) / (bulletCountPerWave - 1);
                 for (var j = 1; j <= bulletCountPerWave; j++)
                 {
-                    float dirX = bulletOriginTransform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-                    float dirY = bulletOriginTransform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+                    // Calculate the angle of the corner in radians.
+                    float radians = (-angle + 90) * Mathf.Deg2Rad;
 
-                    Vector3 moveVector = new Vector3(dirX, dirY, 0f);
-                    Vector3 bulVector = (moveVector - bulletOriginTransform.position).normalized;
+                    Vector3 moveVector = new Vector3(Mathf.Cos(radians), Mathf.Sin(radians));
 
                     var projectile = Instantiate(projectilePrefab, bulletOriginTransform.position, bulletOriginTransform.rotation);
-                    projectile.GetComponent<Projectile>().SetVelocity(bulletSpeed, bulVector);
+                    projectile.GetComponent<Projectile>().SetVelocity(bulletSpeed, moveVector);
                     angle += angleStep;
                 }
                 yield return new WaitForSeconds(waitTimeBetweenBullets);
@@ -112,7 +110,7 @@ public class BulletEmitter : MonoBehaviour
         var centerPosition = new Vector2(bulletOriginTransform.position.x, bulletOriginTransform.position.y);
 
         // Calculate the angle of the corner in radians.
-        float radians = (-angle + 90) * Mathf.PI / 180f;
+        float radians = (-angle + 90) * Mathf.Deg2Rad;
 
         // Get the X and Y coordinates of the corner point.
         return new Vector2(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius) + centerPosition;
