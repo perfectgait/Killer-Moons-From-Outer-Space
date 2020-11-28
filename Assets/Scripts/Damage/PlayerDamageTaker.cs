@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerDamageTaker : DamageTaker
 {
-    [SerializeField] LevelLoader levelLoader;
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] string explosionSfxName = "Small Explosion";
 
@@ -12,6 +11,7 @@ public class PlayerDamageTaker : DamageTaker
     IFrames iframes;
     AudioManager audioManager;
     SpriteFlasher spriteFlasher;
+    LevelLoader levelLoader;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class PlayerDamageTaker : DamageTaker
         iframes = GetComponent<IFrames>();
         audioManager = AudioManager.instance;
         spriteFlasher = GetComponent<SpriteFlasher>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
 
     public override void TakeDamage(float damage)
