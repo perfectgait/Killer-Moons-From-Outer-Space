@@ -53,6 +53,19 @@ public class MoonSatelliteCoordinator : MonoBehaviour
         }
     }
 
+    public void StopAttacking()
+    {
+        StopAllCoroutines();
+
+        foreach (MoonSatellite moonSatellite in moonSatellites)
+        {
+            if (moonSatellite)
+            {
+                moonSatellite.Reset();
+            }
+        }
+    }
+
     public float GetDelayBetweenAttacks()
     {
         return delayBetweenAttacks;

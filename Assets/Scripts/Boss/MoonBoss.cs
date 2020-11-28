@@ -41,6 +41,11 @@ public class MoonBoss : MonoBehaviour
         StopCannonAttack(new MoonCannon[] { eyeCannon });
         StopCannonAttack(heavyCannons);
         StopCannonAttack(lightCannons);
+
+        if (satelliteCoordinator)
+        {
+            satelliteCoordinator.StopAttacking();
+        }
     }
 
     private IEnumerator StartFight()

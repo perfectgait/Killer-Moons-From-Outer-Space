@@ -85,6 +85,12 @@ public class MoonSatellite : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        transform.position = origin;
+        indicatorLineRenderer.enabled = false;
+    }
+
     private bool HasReachedTarget(Vector2 target)
     {
         return Vector2.Distance(transform.position, target) <= 0.1f;
