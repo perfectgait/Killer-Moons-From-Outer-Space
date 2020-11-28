@@ -5,7 +5,6 @@ using UnityEngine;
 public class ScrollingText : MonoBehaviour
 {
     [SerializeField] float startTime = 2f;
-    [SerializeField] float endTime = 10f;
     [SerializeField] float scrollSpeed = 1f;
     [SerializeField] bool shouldHideNavigationUntilEnd = true;
 
@@ -13,6 +12,7 @@ public class ScrollingText : MonoBehaviour
 
     private float currentScrollSpeed;
     private float scrollSpeedIncrease = 5f;
+    private bool shouldStopScrolling = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +41,9 @@ public class ScrollingText : MonoBehaviour
         return Time.timeSinceLevelLoad <= startTime;
     }
 
-    // TODO: Since this is entirely time based, we won't stop
-    // scrolling at the right point if we've pressed the button to speed it up
-    private bool ShouldStopScrolling()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        return Time.timeSinceLevelLoad >= endTime;
+        shouldStopScrolling = true;
     }
 
     private void HandleScrollSpeed()
@@ -63,7 +61,7 @@ public class ScrollingText : MonoBehaviour
 
     private void HandleHiddenNavigation()
     {
-        if (shouldHideNavigationUntilEnd && ShouldStopScrolling())
+        if (shouldHideNavigationUntilEnd && shouldStopScrolling)
         {
             navigation.transform.position = new Vector2(transform.position.x, -0.55f);
             navigation.SetActive(true);
@@ -72,7 +70,7 @@ public class ScrollingText : MonoBehaviour
 
     private void ScrollText()
     {
-        if (!ShouldStopScrolling())
+        if (!shouldStopScrolling)
         {
             transform.position += Vector3.up * currentScrollSpeed * Time.deltaTime;
         }
