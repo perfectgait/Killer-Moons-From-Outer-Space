@@ -11,6 +11,7 @@ public class MoonEyeDamageTaker : DamageTaker
     private MoonDamageTaker moonDamageTaker;
     private SpriteFlasher spriteFlasher;
     private AudioManager audioManager;
+    private MoonEye eye;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class MoonEyeDamageTaker : DamageTaker
         moonDamageTaker = moon.GetComponent<MoonDamageTaker>();
         audioManager = AudioManager.instance;
         spriteFlasher = GetComponent<SpriteFlasher>();
+        eye = GetComponent<MoonEye>();
     }
 
     public override void TakeDamage(float damage)
@@ -31,10 +33,8 @@ public class MoonEyeDamageTaker : DamageTaker
 
     public override void Kill()
     {
-        // Stop the eye from attacking
-        GetComponent<MoonCannon>().StopFiring();
         // Make the eye stop following the player so the spin works
-        GetComponent<MoonEye>().StopFollowingPlayer();
+        eye.StopFollowingPlayer();
         StartCoroutine(DeathSpin());
     }
 

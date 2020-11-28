@@ -208,7 +208,7 @@ MonoBehaviour:
   angleVariance: 0
   waitTimeBetweenBullets: 0.5
   waitTimeBetweenPulse: 1.5
-  continousEmission: 1
+  continousEmission: 0
 --- !u!114 &190088043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   angleVariance: 0
   waitTimeBetweenBullets: 0.5
   waitTimeBetweenPulse: 1.5
-  continousEmission: 1
+  continousEmission: 0
 --- !u!114 &873446947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   angleVariance: 0
   waitTimeBetweenBullets: 1
   waitTimeBetweenPulse: 3
-  continousEmission: 1
+  continousEmission: 0
 --- !u!114 &8878677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,7 +2074,7 @@ MonoBehaviour:
   angleVariance: 0
   waitTimeBetweenBullets: 1
   waitTimeBetweenPulse: 3
-  continousEmission: 1
+  continousEmission: 0
 --- !u!114 &482458310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2918,12 +2918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a6fa8dc9ff0dc42be3e68c3f9aad1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moonCannons:
-  - {fileID: 482458310}
-  - {fileID: 8878677}
-  - {fileID: 190088043}
-  - {fileID: 873446947}
-  - {fileID: 7718246194827300980}
   invulnerabilityShield: {fileID: 2111800382}
   delayUntilFightStarts: 1
   delayUntilShieldStartsLowering: 2
@@ -2932,6 +2926,16 @@ MonoBehaviour:
   - {fileID: 469029653}
   - {fileID: 699174907}
   - {fileID: 707802529}
+  eyeCannon: {fileID: 7718246194827300980}
+  delayBetweenEyeCannonAttacks: 15
+  heavyCannons:
+  - {fileID: 482458310}
+  - {fileID: 8878677}
+  delayBetweenHeavyCannonAttacks: 10
+  lightCannons:
+  - {fileID: 190088043}
+  - {fileID: 873446947}
+  delayBetweenLightCannonAttacks: 11
 --- !u!114 &1132010497
 MonoBehaviour:
   m_ObjectHideFlags: 0

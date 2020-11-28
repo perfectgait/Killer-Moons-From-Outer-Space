@@ -5,42 +5,42 @@ using UnityEngine;
 
 public class MoonBoss : MonoBehaviour
 {
-    [SerializeField] MoonCannon[] moonCannons;
     [SerializeField] GameObject invulnerabilityShield;
     [SerializeField] float delayUntilFightStarts = 5.0f;
     [SerializeField] float delayUntilShieldStartsLowering = 2.0f;
     [SerializeField] float delayUntilAttackStartsAfterShieldIslowered = 1.0f;
     [SerializeField] MoonSatellite[] moonSatellites;
+    [SerializeField] MoonCannon eyeCannon;
+    [SerializeField] float delayBetweenEyeCannonAttacks = 15.0f;
+    [SerializeField] MoonCannon[] heavyCannons;
+    [SerializeField] float delayBetweenHeavyCannonAttacks = 10.0f;
+    [SerializeField] MoonCannon[] lightCannons;
+    [SerializeField] float delayBetweenLightCannonAttacks = 5.0f;
 
     private PathMovement pathMovement;
     private AudioManager audioManager;
     private MoonSatelliteCoordinator satelliteCoordinator;
-    private IEnumerator attackCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         satelliteCoordinator = GetComponent<MoonSatelliteCoordinator>();
         audioManager = AudioManager.instance;
-        attackCoroutine = Attack();
 
         StartCoroutine(StartFight());
     }
 
-    // Update is called once per frame
-    void Update()
+    public MoonCannon GetEyeCannon()
     {
-
-    }
-
-    public MoonCannon[] GetMoonCannons()
-    {
-        return moonCannons;
+        return eyeCannon;
     }
 
     public void StopAttacking()
     {
         StopAllCoroutines();
+        StopCannonAttack(new MoonCannon[] { eyeCannon });
+        StopCannonAttack(heavyCannons);
+        StopCannonAttack(lightCannons);
     }
 
     private IEnumerator StartFight()
@@ -87,7 +87,10 @@ public class MoonBoss : MonoBehaviour
             satelliteCoordinator.InitializeSatellites();
         }
 
-        StartCoroutine(attackCoroutine);
+        StartCoroutine(CannonAttack(new MoonCannon[] { eyeCannon }, delayBetweenEyeCannonAttacks));
+        StartCoroutine(CannonAttack(heavyCannons, delayBetweenHeavyCannonAttacks));
+        StartCoroutine(CannonAttack(lightCannons, delayBetweenLightCannonAttacks));
+        StartCoroutine(SatelliteAttack());
     }
 
     private IEnumerator PlayBossAudio()
@@ -103,7 +106,7 @@ public class MoonBoss : MonoBehaviour
         audioManager.PlayMusic("Boss Battle");
     }
 
-    private IEnumerator Attack()
+    private IEnumerator CannonAttack(MoonCannon[] moonCannons, float delayBetweenAttacks)
     {
         while (true)
         {
@@ -115,17 +118,33 @@ public class MoonBoss : MonoBehaviour
                 }
             }
 
-            // Start the satellite attack
-            if (satelliteCoordinator)
-            {
-                //satelliteCoordinator.InitializeSatellites();
-                satelliteCoordinator.EnableSatellites();
-                //StartCoroutine(satelliteCoordinator.Attack());
-                satelliteCoordinator.Attack();
-            }
+            yield return new WaitForSeconds(delayBetweenAttacks);
+        }
+    }
 
-            // @TODO Have a coroutine for the satellites and one for the cannons so each can fire at different intervals
-            yield return new WaitForSeconds(15.0f);
+    private void StopCannonAttack(MoonCannon[] moonCannons)
+    {
+        foreach (MoonCannon moonCannon in moonCannons)
+        {
+            if (moonCannon)
+            {
+                moonCannon.StopFiring();
+            }
+        }
+    }
+
+    private IEnumerator SatelliteAttack()
+    {
+        if (satelliteCoordinator)
+        {
+            satelliteCoordinator.EnableSatellites();
+
+            while (true)
+            {
+                satelliteCoordinator.Attack();
+
+                yield return new WaitForSeconds(satelliteCoordinator.GetDelayBetweenAttacks());
+            }
         }
     }
 }

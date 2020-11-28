@@ -44,8 +44,6 @@ public class MoonSatelliteCoordinator : MonoBehaviour
 
     public void Attack()
     {
-        //while (true)
-        //{
         foreach (MoonSatellite moonSatellite in moonSatellites)
         {
             if (moonSatellite)
@@ -53,8 +51,10 @@ public class MoonSatelliteCoordinator : MonoBehaviour
                 StartCoroutine(moonSatellite.Attack());
             }
         }
+    }
 
-        //    yield return new WaitForSeconds(delayBetweenAttacks);
-        //}
+    public float GetDelayBetweenAttacks()
+    {
+        return delayBetweenAttacks;
     }
 }

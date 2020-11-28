@@ -52,31 +52,8 @@ public class MoonDamageTaker : DamageTaker
         GameScore.instance.IncrementBy(score);
 
         moon.StopAttacking();
+        moon.GetEyeCannon().GetComponent<DamageTaker>().Kill();
         StartCoroutine(Explode());
-        KillCannons();
-    }
-
-    private void KillCannons()
-    {
-        if (!moon)
-        {
-            return;
-        }
-
-        MoonCannon[] moonCannons = moon.GetMoonCannons();
-
-        foreach (MoonCannon moonCannon in moonCannons)
-        {
-            if (moonCannon)
-            {
-                DamageTaker moonCannonDamageTaker = moonCannon.GetComponent<DamageTaker>();
-
-                if (moonCannonDamageTaker)
-                {
-                    moonCannonDamageTaker.Kill();
-                }
-            }
-        }
     }
 
     private IEnumerator Explode()
