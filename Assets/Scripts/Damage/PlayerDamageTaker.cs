@@ -70,12 +70,13 @@ public class PlayerDamageTaker : DamageTaker
 
     private IEnumerator KillPlayer()
     {
-        // I couldn't simply call Destroy because apparently that also cancels
+        // I couldn't simply call Destroy on the gameobject, because apparently that also cancels
         // any coroutines running on that gameobject
-        // So instead, I simply disable the sprite renderer for the player
+        // So instead, I simply disable or destroy components on the Player
         GetComponentInChildren<SpriteRenderer>().enabled = false;
+        GetComponentInChildren<Canvas>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-        GetComponent<BulletEmitter>().enabled = false;
+        Destroy(GetComponent<BulletEmitter>());
         Explode();
 
         // Playing game over music before the scene loads so that the ambient sounds can play first

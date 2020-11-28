@@ -1234,6 +1234,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 207609351}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &599102316 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7808236355670468041, guid: 878065aacb21df649a8bf209ae0c81b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7808236355182583222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &644337129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5560466720347873721, guid: 73c6ea9d2dc893e41a4bc44b2f21edd0,
@@ -1968,30 +1974,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7325220177915662291, guid: f441a349be031a145a07b6ceed3aa28c,
+    - target: {fileID: 7325220177594760044, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177915662291, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325220177915662291, guid: f441a349be031a145a07b6ceed3aa28c,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7325220177915662291, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7325220178134234413, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7325220178134234413, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7325220178164830001, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
@@ -2614,6 +2625,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
+        type: 3}
+      propertyPath: soundEffects.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 52def59f9802a2647945abc375ae0bde, type: 3}
     - target: {fileID: 2103529381942585749, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
       propertyPath: m_RootOrder
@@ -2678,6 +2694,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055072858, guid: 791ce651caa9a4bd08fd42affb8ab6cd, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 599102316}
     - target: {fileID: 2716866169356230322, guid: 791ce651caa9a4bd08fd42affb8ab6cd,
         type: 3}
       propertyPath: m_RootOrder

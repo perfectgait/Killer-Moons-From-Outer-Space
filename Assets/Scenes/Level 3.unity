@@ -1621,6 +1621,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 568932338}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &786033248 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7808236355670468041, guid: 878065aacb21df649a8bf209ae0c81b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7808236355182583222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &790480865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5432157451536510014, guid: bde7914979e510246b0ebc8074871558,
@@ -3330,6 +3336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055072858, guid: 791ce651caa9a4bd08fd42affb8ab6cd, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 786033248}
     - target: {fileID: 2143303532, guid: 791ce651caa9a4bd08fd42affb8ab6cd, type: 3}
       propertyPath: levelLoader
       value: 

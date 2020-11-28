@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalMovementSpeed, Input.GetAxis("Vertical") * verticalMovementSpeed); ;
+        rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalMovementSpeed, Input.GetAxis("Vertical") * verticalMovementSpeed);
     }
 
     private void Fire()
