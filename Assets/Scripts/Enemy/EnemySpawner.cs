@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     public bool isSpawning = false;
     public bool hasFinishedSpawning = false;
 
+    private float secondsUntilLevelBannerDisappears = 2.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,9 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemies()
     {
         int spawnedEnemies = 0;
-        yield return new WaitForSeconds(startSpawningAfter);
+        // Hack: Adding secondsBeforeLevelBannerDisappears is a workaround to ensure that we don't
+        // spawn enemies while the level banner is covering up the screen
+        yield return new WaitForSeconds(startSpawningAfter + secondsUntilLevelBannerDisappears);
         isSpawning = true;
         while (spawnedEnemies < enemyCount)
         {
