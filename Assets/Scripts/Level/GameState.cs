@@ -21,7 +21,15 @@ public class GameState : MonoBehaviour
         playerHealth = player.GetComponent<Health>();
 
         GameObject enemySpawnerContainer = GameObject.Find("Enemy Spawners");
-        enemySpawners = enemySpawnerContainer.GetComponentsInChildren<EnemySpawner>();
+
+        if (enemySpawnerContainer == null)
+        {
+            enemySpawners = null;
+        }
+        else
+        {
+            enemySpawners = enemySpawnerContainer.GetComponentsInChildren<EnemySpawner>();
+        }
     }
 
     // Update is called once per frame
@@ -71,6 +79,11 @@ public class GameState : MonoBehaviour
 
     private bool EnemiesHaveFinishedSpawning()
     {
+        if (enemySpawners == null)
+        {
+            return true;
+        }
+
         foreach (EnemySpawner spawner in enemySpawners)
         {
             if (!spawner.hasFinishedSpawning)
