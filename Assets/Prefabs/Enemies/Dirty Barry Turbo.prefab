@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da4f97a1b89776e428a26764ee5ea97e, type: 3}
-  m_Color: {r: 1, g: 0.31764707, b: 0.31764707, a: 1}
+  m_Color: {r: 0.8584906, g: 0.49416345, b: 0.40899786, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToDamage: {fileID: 0}
+  objectToFlash: {fileID: 0}
   score: 300
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
