@@ -63,7 +63,6 @@ public class ScrollingText : MonoBehaviour
     {
         if (shouldHideNavigationUntilEnd && shouldStopScrolling)
         {
-            navigation.transform.position = new Vector2(transform.position.x, -0.55f);
             navigation.SetActive(true);
         }
     }
