@@ -491,6 +491,11 @@ PrefabInstance:
       propertyPath: m_text
       value: THE MOON
       objectReference: {fileID: 0}
+    - target: {fileID: 7325220176187056204, guid: f441a349be031a145a07b6ceed3aa28c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7325220176276835852, guid: f441a349be031a145a07b6ceed3aa28c,
         type: 3}
       propertyPath: m_AnchorMax.x
