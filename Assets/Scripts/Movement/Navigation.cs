@@ -64,7 +64,7 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointe
                 break;
             case RESTART_BUTTON:
                 GameScore.instance.Reset();
-                levelLoader.LoadFirstLevel();
+                levelLoader.LoadPreviousScene();
                 break;
             case MAIN_MENU_BUTTON:
                 GameScore.instance.Reset();

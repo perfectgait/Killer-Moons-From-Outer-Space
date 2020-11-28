@@ -9,6 +9,13 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    SceneHistory sceneHistory;
+
+    private void Start()
+    {
+        sceneHistory = SceneHistory.instance;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -17,18 +24,21 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
-    public void RestartScene()
+    public void LoadPreviousScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        AddCurrentSceneToHistory();
+        SceneManager.LoadScene(sceneHistory.GetPrevious());
     }
 
     public void LoadMainMenu()
     {
+        sceneHistory.Reset();
         SceneManager.LoadScene("Main Menu");
     }
 
     public void LoadNextLevel()
     {
+        AddCurrentSceneToHistory();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -63,17 +73,24 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadWinScreen()
     {
+        AddCurrentSceneToHistory();
         SceneManager.LoadScene("Win Screen");
     }
 
     public void LoadFirstLevel()
     {
+        AddCurrentSceneToHistory();
         SceneManager.LoadScene("Level 1");
     }
 
     public void LoadLoseScreen()
     {
+        AddCurrentSceneToHistory();
         SceneManager.LoadScene("Lose Screen");
     }
 
+    private void AddCurrentSceneToHistory()
+    {
+        sceneHistory.Add(SceneManager.GetActiveScene().name);
+    }
 }
