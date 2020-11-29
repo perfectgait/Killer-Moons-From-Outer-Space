@@ -14,12 +14,6 @@ public class MoonShield : MonoBehaviour
         audioManager = AudioManager.instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         audioManager.PlaySoundEffect(sfxName);

@@ -48,12 +48,12 @@ public class ScrollingText : MonoBehaviour
 
     private void HandleScrollSpeed()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire3"))
         {
             currentScrollSpeed = scrollSpeed * scrollSpeedIncrease;
         }
 
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire3"))
         {
             currentScrollSpeed = scrollSpeed;
         }
