@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 700
+  health: 1000
 --- !u!114 &4543539939476238031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationGameObject: {fileID: 685629707}
-  moveSpeed: 7
+  moveSpeed: 12
   delayUntilGoingBackToOrigin: 4
   timeToDisplayIndicatorLine: 5
   initialTimeBetweenIndicatorLineFlashes: 1
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationGameObject: {fileID: 1399196596}
-  moveSpeed: 7
+  moveSpeed: 12
   delayUntilGoingBackToOrigin: 4
   timeToDisplayIndicatorLine: 5
   initialTimeBetweenIndicatorLineFlashes: 1
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationGameObject: {fileID: 1403267485}
-  moveSpeed: 7
+  moveSpeed: 12
   delayUntilGoingBackToOrigin: 4
   timeToDisplayIndicatorLine: 5
   initialTimeBetweenIndicatorLineFlashes: 1
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305f6f1eaf1724408af4fe21b26f773c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 700
+  health: 1000
 --- !u!114 &873446943
 MonoBehaviour:
   m_ObjectHideFlags: 0
