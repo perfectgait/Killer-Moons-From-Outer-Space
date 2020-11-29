@@ -67,9 +67,17 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1") || !CanFire())
         {
-            StopCoroutine(firingCoroutine);
-            isFiring = false;
+            StopFiring();
         }
+    }
+
+    public void StopFiring()
+    {
+        if (firingCoroutine != null)
+        {
+            StopCoroutine(firingCoroutine);
+        }
+        isFiring = false;
     }
 
     private void ApplyPowerups()

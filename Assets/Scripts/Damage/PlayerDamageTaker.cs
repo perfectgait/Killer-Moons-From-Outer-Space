@@ -77,6 +77,8 @@ public class PlayerDamageTaker : DamageTaker
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         GetComponentInChildren<Canvas>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<Player>().SetCanFire(false);
+        GetComponent<Player>().StopFiring();
         Destroy(GetComponent<BulletEmitter>());
         Explode();
 
