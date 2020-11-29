@@ -127,8 +127,8 @@ MonoBehaviour:
   bulletSpeed: 8
   bulletCountPerWave: 3
   wavesPerPulse: 3
-  startAngle: 270
-  endAngle: 225
+  startAngle: 250
+  endAngle: 215
   angleVariance: 0
   waitTimeBetweenBullets: 0.25
   waitTimeBetweenPulse: 1.5
@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226898488e7c24bf5b527ecfa1b7134d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToDamage: {fileID: 0}
+  objectToFlash: {fileID: 0}
   score: 100
   explosionPrefab: {fileID: 4679229570263552045, guid: 0e738855f8e4e714eb3ca51bc5f8f290,
     type: 3}
