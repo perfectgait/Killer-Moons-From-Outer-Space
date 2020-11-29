@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1") && CanFire())
+        if (Input.GetButtonDown("Fire1") && CanFire() && !isFiring)
         {
             firingCoroutine = StartCoroutine(bulletEmitter.Emit());
             isFiring = true;
