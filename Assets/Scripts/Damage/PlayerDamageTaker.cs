@@ -80,6 +80,9 @@ public class PlayerDamageTaker : DamageTaker
         GetComponent<Player>().SetCanFire(false);
         GetComponent<Player>().StopFiring();
         Destroy(GetComponent<BulletEmitter>());
+
+        float slowDown = 0.5f;
+        Time.timeScale = slowDown;
         Explode();
 
         // Playing game over music before the scene loads so that the ambient sounds can play first
@@ -88,7 +91,9 @@ public class PlayerDamageTaker : DamageTaker
             audioManager.PlayMusic("Game Over");
         }
 
-        yield return new WaitForSeconds(3.9f);
+        float explosionLength = 3.9f;
+        yield return new WaitForSeconds(explosionLength * slowDown);
+        Time.timeScale = 1f;
 
         levelLoader.LoadLoseScreen();
     }
