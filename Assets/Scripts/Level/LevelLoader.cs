@@ -9,6 +9,13 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        Cursor.visible = false;
+    }
+
+    // Update is called once per frame
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
