@@ -64,6 +64,8 @@ public class EnemyDamageTaker : DamageTaker
         // but this is fine for now because it is late.
         Destroy(objectToDamage, .01f);
         Explode();
+
+        CameraShake.Shake(0.1f, 0.04f);
     }
 
     private void Explode()
