@@ -26,6 +26,11 @@ public class Navigation : MonoBehaviour, ISelectHandler, ISubmitHandler, IPointe
         audioManager = AudioManager.instance;
         eventSystem = EventSystem.current;
         levelLoader = FindObjectOfType<LevelLoader>();
+
+        if (gameObject.name == QUIT_BUTTON && Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void OnSelect(BaseEventData eventData)
