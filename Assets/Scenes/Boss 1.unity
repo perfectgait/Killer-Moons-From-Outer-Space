@@ -992,31 +992,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
-        type: 3}
-      propertyPath: soundEffects.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
-        type: 3}
-      propertyPath: soundEffects.Array.data[15].name
-      value: Shield Impact
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
-        type: 3}
-      propertyPath: soundEffects.Array.data[15].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
-        type: 3}
-      propertyPath: soundEffects.Array.data[15].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103529381942585748, guid: da7695945cba87d4fbf0682c93a16e2a,
-        type: 3}
-      propertyPath: soundEffects.Array.data[15].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f5da25bf06bd1964fb1363cba68c6eef, type: 3}
     - target: {fileID: 2103529381942585749, guid: da7695945cba87d4fbf0682c93a16e2a,
         type: 3}
       propertyPath: m_RootOrder

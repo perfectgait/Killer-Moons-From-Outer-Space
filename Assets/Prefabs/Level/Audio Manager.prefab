@@ -119,6 +119,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Shield Impact
+    audioClip: {fileID: 8300000, guid: f5da25bf06bd1964fb1363cba68c6eef, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
   musicTracks:
   - name: Level 1
     audioClip: {fileID: 8300000, guid: c9e634f1bd06b424fbd901040c823cfc, type: 3}
