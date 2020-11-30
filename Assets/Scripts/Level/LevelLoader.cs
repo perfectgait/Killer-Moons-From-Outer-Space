@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (InputSystem.GetDevice<Keyboard>().escapeKey.isPressed)
         {
             QuitGame();
         }

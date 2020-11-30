@@ -19,12 +19,20 @@ public class Player : MonoBehaviour
     private float waitTimeBetweenBulletsOffset = 0.2f;
     private Rigidbody2D rigidBody;
 
+    private InputManager inputManager;
+
+    private void Awake()
+    {
+        inputManager = new InputManager();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         bulletEmitter = GetComponent<BulletEmitter>();
         health = GetComponent<Health>();
         rigidBody = GetComponent<Rigidbody2D>();
+        
 
         if (startWithMinigun)
         {
@@ -41,9 +49,21 @@ public class Player : MonoBehaviour
         Fire();
     }
 
+    private void OnEnable()
+    {
+        inputManager.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputManager.Player.Disable();
+    }
+
     private void Move()
     {
-        rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalMovementSpeed, Input.GetAxis("Vertical") * verticalMovementSpeed);
+        Vector2 inputMovement = inputManager.Player.Move.ReadValue<Vector2>();
+        Vector2 movementSpeed = new Vector2(horizontalMovementSpeed, verticalMovementSpeed);
+        rigidBody.velocity = inputMovement * movementSpeed;
     }
 
     private void Fire()
@@ -53,19 +73,21 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1") && CanFire() && !isFiring)
+        bool fireIsPressedDown = Mathf.Abs(inputManager.Player.Fire.ReadValue<float>()) > 0;
+
+        if (fireIsPressedDown && CanFire() && !isFiring)
         {
             firingCoroutine = StartCoroutine(bulletEmitter.Emit());
             isFiring = true;
         }
 
         // If the player has let go of the fire button, start the countdown timer
-        if (Input.GetButtonUp("Fire1") && isFiring)
+        if (!fireIsPressedDown && isFiring)
         {
             canFireCountdown = bulletEmitter.GetWaitTimeBetweenBullets() - waitTimeBetweenBulletsOffset;
         }
 
-        if (Input.GetButtonUp("Fire1") || !CanFire())
+        if (!fireIsPressedDown || !CanFire())
         {
             StopFiring();
         }
