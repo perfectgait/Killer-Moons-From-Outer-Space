@@ -45,7 +45,7 @@ through 3 levels of intense action to face the ultimate alien evil!
     Sinestesia](https://opengameart.org/content/2d-explosion-animations-frame-by-frame)
 -   [Animated Moon Logo - Hansjörg Malthaner
     (Varkalandar)](https://opengameart.org/content/animated-moon)
--   [Satellite - peony](https://opengameart.org/content/animated-moon)
+-   [Satellite - peony](https://opengameart.org/content/space-pixel-art)
 -   [Moon Shield -
     Bonsaiheldin](https://opengameart.org/content/shield-effect)
 
