@@ -13,13 +13,16 @@ public class LevelLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            Cursor.visible = false;
+        }
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (InputSystem.GetDevice<Keyboard>().escapeKey.isPressed)
+        if (Application.platform != RuntimePlatform.WebGLPlayer && InputSystem.GetDevice<Keyboard>().escapeKey.isPressed)
         {
             QuitGame();
         }
