@@ -14,6 +14,23 @@ public class ScrollingText : MonoBehaviour
     private float scrollSpeedIncrease = 5f;
     private bool shouldStopScrolling = false;
 
+    private InputManager inputManager;
+
+    private void Awake()
+    {
+        inputManager = new InputManager();
+    }
+
+    private void OnEnable()
+    {
+        inputManager.ScrollingText.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputManager.ScrollingText.Disable();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,12 +65,13 @@ public class ScrollingText : MonoBehaviour
 
     private void HandleScrollSpeed()
     {
-        if (Input.GetButtonDown("Fire3"))
+        bool scrollFastIsPressedDown = Mathf.Abs(inputManager.ScrollingText.ScrollFast.ReadValue<float>()) > 0;
+
+        if (scrollFastIsPressedDown)
         {
             currentScrollSpeed = scrollSpeed * scrollSpeedIncrease;
         }
-
-        if (Input.GetButtonUp("Fire3"))
+        else
         {
             currentScrollSpeed = scrollSpeed;
         }
